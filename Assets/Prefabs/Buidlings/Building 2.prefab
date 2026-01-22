@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8399139719304609365}
   - component: {fileID: 7848282544373102931}
   - component: {fileID: 7723602050056229058}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'Roof '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d57bdda8d8ea7840bee20ec83f204b8, type: 2}
+  - {fileID: 2100000, guid: 091f90db9aa4e484a81a434c7e1c5228, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,8 +123,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5042150540298825606}
-  m_Layer: 0
-  m_Name: Building AA
+  - component: {fileID: 7527399101235558193}
+  m_Layer: 7
+  m_Name: Building 2
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -146,6 +147,27 @@ Transform:
   - {fileID: 8556630767945298199}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7527399101235558193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2862601177990619326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434764f71391c0c46964239cd680d56e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Building
+  buildingCost:
+  - type: 0
+    amount: 5
+  npcSpawnCost:
+  - type: 1
+    amount: 5
+  health: 150
+  NPC: {fileID: 0}
+  icon: {fileID: 21300000, guid: f94ca994f1fcf3f4eb873833da3b1038, type: 3}
 --- !u!1 &5028083842838230155
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +181,7 @@ GameObject:
   - component: {fileID: 4085067929831807915}
   - component: {fileID: 7059481900821936141}
   - component: {fileID: 7230042378554056798}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,3 +297,7 @@ MonoBehaviour:
   buildingCost:
   - type: 0
     amount: 5
+  npcSpawnCost: []
+  health: 0
+  NPC: {fileID: 0}
+  icon: {fileID: 0}

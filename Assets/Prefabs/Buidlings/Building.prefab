@@ -243,3 +243,7 @@ MonoBehaviour:
   buildingCost:
   - type: 0
     amount: 5
+  npcSpawnCost: []
+  health: 100
+  NPC: {fileID: 0}
+  icon: {fileID: 21300000, guid: 1e612a3a7d79a8742834d780c541c845, type: 3}

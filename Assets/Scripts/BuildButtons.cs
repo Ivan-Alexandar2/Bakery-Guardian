@@ -19,7 +19,10 @@ public class BuildButtons : MonoBehaviour
     {
         // Don't instantiate here. Pass the data to the boss.
         //building = buildingPrefab.GetComponent<Building>();
-        gameManager.TryBuyBuilding(building.buildingCost);
+        //if(gameManager.TryBuyBuilding(building.buildingCost));
+        //{
+        //    // other variant
+        //}
         FindObjectOfType<BuildingPlacementManager>().StartPlacing(buildingPrefab, buildingBlueprint);
         gameButtons.troopBuildingMenu.SetActive(false);
     }

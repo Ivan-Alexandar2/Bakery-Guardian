@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingPlacementManager : MonoBehaviour
@@ -13,16 +14,27 @@ public class BuildingPlacementManager : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, groundLayer))
+        Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red);
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
         {
             currentBlueprint.transform.position = hit.point;
 
             if (Input.GetMouseButtonDown(0))
-            {
-                Instantiate(prefabToBuild, hit.point, Quaternion.identity);
-                Destroy(currentBlueprint);
-                currentBlueprint = null; // Stop placing
+            { 
+                List<ResourceCost> cost = prefabToBuild.GetComponent<Building>().buildingCost;
+
+                if (FindObjectOfType<GameManager>().TryBuyBuilding(cost))
+                {
+                    Instantiate(prefabToBuild, hit.point, Quaternion.identity);
+                    Destroy(currentBlueprint);
+                    currentBlueprint = null;
+                }
                 
+            }
+            if(Input.GetMouseButtonDown(1))
+            {
+                Destroy(currentBlueprint);
+                currentBlueprint = null;
             }
         }
     }
