@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Building.cs" />
+    <Compile Include="Assets\Scripts\UnitSpawner.cs" />
     <Compile Include="Assets\Scripts\BuildButtons.cs" />
     <Compile Include="Assets\Scripts\SelectionManager.cs" />
     <Compile Include="Assets\Scripts\GameButtons.cs" />

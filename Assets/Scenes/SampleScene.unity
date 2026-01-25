@@ -4241,6 +4241,8 @@ MonoBehaviour:
   resourceSprites:
   - {fileID: 0}
   - {fileID: 0}
+  queueText: {fileID: 0}
+  spawnTimer: {fileID: 0}
 --- !u!1 &887618052
 GameObject:
   m_ObjectHideFlags: 0
@@ -5926,7 +5928,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1279897927}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 887330802}
+        m_TargetAssemblyTypeName: BuildingUIManager, Assembly-CSharp
+        m_MethodName: OnSpawnButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1279897927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7468,6 +7482,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2721190787476861140, guid: 45ee05dbe642dec49bce19fc2874e9e3, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 887330799}
+    - target: {fileID: 2721190787476861140, guid: 45ee05dbe642dec49bce19fc2874e9e3, type: 3}
+      propertyPath: selectionManager
+      value: 
+      objectReference: {fileID: 330585549}
     - target: {fileID: 2862601177990619326, guid: 45ee05dbe642dec49bce19fc2874e9e3, type: 3}
       propertyPath: m_Name
       value: Building AA
@@ -7511,6 +7533,18 @@ PrefabInstance:
     - target: {fileID: 5042150540298825606, guid: 45ee05dbe642dec49bce19fc2874e9e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7527399101235558193, guid: 45ee05dbe642dec49bce19fc2874e9e3, type: 3}
+      propertyPath: unitSpawnCost.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7527399101235558193, guid: 45ee05dbe642dec49bce19fc2874e9e3, type: 3}
+      propertyPath: unitSpawnCost.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7527399101235558193, guid: 45ee05dbe642dec49bce19fc2874e9e3, type: 3}
+      propertyPath: unitSpawnCost.Array.data[0].amount
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

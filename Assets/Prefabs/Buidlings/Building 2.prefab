@@ -124,6 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5042150540298825606}
   - component: {fileID: 7527399101235558193}
+  - component: {fileID: 2721190787476861140}
   m_Layer: 7
   m_Name: Building 2
   m_TagString: Untagged
@@ -145,6 +146,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8556630767945298199}
+  - {fileID: 1419507201472074229}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7527399101235558193
@@ -162,12 +164,30 @@ MonoBehaviour:
   buildingCost:
   - type: 0
     amount: 5
-  npcSpawnCost:
+  unitSpawnCost:
   - type: 1
-    amount: 5
+    amount: 10
   health: 150
   NPC: {fileID: 0}
+  timeForNPCSpawn: 0
   icon: {fileID: 21300000, guid: f94ca994f1fcf3f4eb873833da3b1038, type: 3}
+--- !u!114 &2721190787476861140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2862601177990619326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6e6ca907839bc46939b249ff7b6ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSpawner
+  unitPrefab: {fileID: 7570806917721668861, guid: c144d9c4a9442524f941618b1af84ce3, type: 3}
+  spawnPoint: {fileID: 6112921002703676628}
+  spawnInterval: 3
+  gameManager: {fileID: 0}
+  selectionManager: {fileID: 0}
 --- !u!1 &5028083842838230155
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +200,6 @@ GameObject:
   - component: {fileID: 5371232517239091954}
   - component: {fileID: 4085067929831807915}
   - component: {fileID: 7059481900821936141}
-  - component: {fileID: 7230042378554056798}
   m_Layer: 7
   m_Name: Building
   m_TagString: Untagged
@@ -282,22 +301,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7230042378554056798
-MonoBehaviour:
+--- !u!1 &6112921002703676628
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5028083842838230155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434764f71391c0c46964239cd680d56e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Building
-  buildingCost:
-  - type: 0
-    amount: 5
-  npcSpawnCost: []
-  health: 0
-  NPC: {fileID: 0}
-  icon: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419507201472074229}
+  m_Layer: 7
+  m_Name: Spawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1419507201472074229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6112921002703676628}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.014, y: 0.271, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5042150540298825606}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

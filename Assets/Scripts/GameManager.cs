@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
     {
        resourceInventory.Add(ResourceType.Wood, 5);
        resourceInventory.Add(ResourceType.Bread, 20);
+       resourceInventory.Add(ResourceType.Fish, 0);
+       resourceInventory.Add(ResourceType.Stone, 0);
+       resourceInventory.Add(ResourceType.Gems, 0);
 
        uiReferences.Add(ResourceType.Wood, woodText);
        uiReferences.Add(ResourceType.Bread, breadText);
@@ -77,6 +80,26 @@ public class GameManager : MonoBehaviour
         }
 
         foreach (ResourceCost cost in buildingCosts)
+        {
+            resourceInventory[cost.type] -= cost.amount;
+        }
+
+        UpdateUI();
+        return true;
+    }
+
+    public bool TryBuyUnit(List<ResourceCost> unitCost)
+    {
+        foreach (ResourceCost cost in unitCost)
+        {
+            if (resourceInventory[cost.type] < cost.amount)
+            {
+                Debug.Log("Not enough resources");
+                return false;
+            }
+        }
+
+        foreach (ResourceCost cost in unitCost)
         {
             resourceInventory[cost.type] -= cost.amount;
         }

@@ -12,6 +12,11 @@ public class BuildingUIManager : MonoBehaviour
     public Image buildingSprite;
     public Image[] resourceSprites;
 
+    public TextMeshProUGUI queueText;
+    public TextMeshProUGUI spawnTimer;
+
+    private UnitSpawner currentSpawner;
+
     public void OpenMenu(Building buildingData)
     {
         menuPanel.SetActive(true);
@@ -33,7 +38,7 @@ public class BuildingUIManager : MonoBehaviour
         }
 
         spawnCostText.text = "";
-        foreach (ResourceCost cost in buildingData.npcSpawnCost)
+        foreach (ResourceCost cost in buildingData.unitSpawnCost)
         {
             if (cost.amount > 0)
             {
@@ -43,7 +48,15 @@ public class BuildingUIManager : MonoBehaviour
             }
         }
 
-
+        currentSpawner = buildingData.GetComponent<UnitSpawner>();
+        if (currentSpawner != null)
+        {
+            spawnNPCButton.interactable = true;
+        }
+        else
+        {
+            spawnNPCButton.interactable = false;
+        }
 
         // TODO: Update the cost buttons based on buildingData.npcSpawnCost
     }
@@ -51,5 +64,13 @@ public class BuildingUIManager : MonoBehaviour
     public void CloseMenu()
     {
         menuPanel.SetActive(false);
+    }
+
+    public void OnSpawnButtonClicked() // LINK THIS TO THE BUTTON
+    {
+        if (currentSpawner != null)
+        {
+            currentSpawner.AttemptQueueUnit();
+        }
     }
 }
