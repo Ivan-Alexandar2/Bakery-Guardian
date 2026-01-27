@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
        resourceInventory.Add(ResourceType.Wood, 5);
-       resourceInventory.Add(ResourceType.Bread, 20);
+       resourceInventory.Add(ResourceType.Bread, 200);
        resourceInventory.Add(ResourceType.Fish, 0);
        resourceInventory.Add(ResourceType.Stone, 0);
        resourceInventory.Add(ResourceType.Gems, 0);

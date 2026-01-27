@@ -69,5 +69,11 @@ public class UnitSpawner : MonoBehaviour
         return currentTimer / myBuildingStats.timeForNPCSpawn;
     }
 
+    public float GetTimeRemaining()
+    {
+        if (queuedUnits == 0) return 0;
+        return myBuildingStats.timeForNPCSpawn - currentTimer;
+    }
+
     public int GetQueueCount() => queuedUnits;
 }

@@ -78,8 +78,8 @@ public class CameraController : MonoBehaviour
 
     void HandleRotation()
     {
-        if (Input.GetKey(KeyCode.Q)) targetRotation -= rotateSpeed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.E)) targetRotation += rotateSpeed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.Q)) targetRotation += rotateSpeed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.E)) targetRotation -= rotateSpeed * Time.deltaTime;
 
         // Smooth rotation
         currentRotation = Mathf.SmoothDampAngle(currentRotation, targetRotation, ref rotationRef, rotationSmoothTime);
