@@ -107,4 +107,13 @@ public class GameManager : MonoBehaviour
         UpdateUI();
         return true;
     }
+
+    public void AddResource(ResourceType type, int amount)
+    {
+        if (resourceInventory.ContainsKey(type))
+        {
+            resourceInventory[type] += amount; // Add to existing pile
+        }
+        UpdateUI();
+    }
 }

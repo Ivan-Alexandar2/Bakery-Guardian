@@ -41,8 +41,14 @@ public class UnitSpawner : MonoBehaviour
 
     private void SpawnUnit()
     {
-        Instantiate(unitPrefab, spawnPoint.position, spawnPoint.rotation);
-        Debug.Log("Unit Spawned!");
+        GameObject newUnit = Instantiate(unitPrefab, spawnPoint.position, spawnPoint.rotation);
+
+        // If the new unit is a Worker, tell it "I am your workplace"
+        WorkerAI workerScript = newUnit.GetComponent<WorkerAI>();
+        if (workerScript != null)
+        {
+            workerScript.myWorkplace = this.GetComponent<Building>();
+        }
     }
 
     // Called by the UI Manager
@@ -54,15 +60,13 @@ public class UnitSpawner : MonoBehaviour
         if (gameManager.TryBuyUnit(cost))
         {
             queuedUnits++;
-            Debug.Log("Unit Queued. Total: " + queuedUnits);
         }
         else
         {
-            Debug.Log("Not enough minerals.");
+            Debug.Log("Not enough materials.");
         }
     }
 
-    // Helper for visualization later
     public float GetProgress()
     {
         if (queuedUnits == 0) return 0;

@@ -61,16 +61,24 @@
     <Analyzer Include="D:\Unity\6000.3.4f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Building.cs" />
+    <Compile Include="Assets\Scripts\NPCs\WorkerAI.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\NPCs\AggroSensor.cs" />
     <Compile Include="Assets\Scripts\UnitSpawner.cs" />
+    <Compile Include="Assets\Scripts\NPCs\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\BuildButtons.cs" />
-    <Compile Include="Assets\Scripts\SelectionManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\DayNightManager.cs" />
     <Compile Include="Assets\Scripts\GameButtons.cs" />
     <Compile Include="Assets\Scripts\BuildingUIManager.cs" />
+    <Compile Include="Assets\Scripts\NPCs\UnitStats.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scripts\BuildingPlacementManager.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Buildings\Building.cs" />
+    <Compile Include="Assets\Scripts\NPCs\SoldierAI.cs" />
+    <Compile Include="Assets\Scripts\Managers\SelectionManager.cs" />
+    <Compile Include="Assets\Scripts\Buildings\ResourceDepot.cs" />
+    <Compile Include="Assets\Scripts\NPCs\Unit.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Buildings\BuildingPlacementManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
