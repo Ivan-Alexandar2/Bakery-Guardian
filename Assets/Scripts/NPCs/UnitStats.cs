@@ -19,6 +19,11 @@ public class UnitStats : ScriptableObject
     [Header("Economy (Workers Only)")]
     public int resourceCapacity = 1;
     public float harvestTime = 8.0f;
+
+    [Header("Wave Spawning (Enemies Only)")]
+    public int spawnCost = 5;      // How many points this enemy costs
+    public int minDayToSpawn = 1;  // Unlocks on Day X
+    public GameObject enemyPrefab; // The actual thing to spawn
 }
 
 public enum UnitType

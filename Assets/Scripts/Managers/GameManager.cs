@@ -33,8 +33,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-       resourceInventory.Add(ResourceType.Wood, 5);
-       resourceInventory.Add(ResourceType.Bread, 200);
+       resourceInventory.Add(ResourceType.Wood, 8);
+       resourceInventory.Add(ResourceType.Bread, 20);
        resourceInventory.Add(ResourceType.Fish, 0);
        resourceInventory.Add(ResourceType.Stone, 0);
        resourceInventory.Add(ResourceType.Gems, 0);
@@ -50,7 +50,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-       
+        if (Input.GetKeyDown(KeyCode.Space)) Time.timeScale = 0f;
+        if (Input.GetKeyDown(KeyCode.Alpha1)) Time.timeScale = 1f;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) Time.timeScale = 2f;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) Time.timeScale = 3f;
+
     }
 
     private void UpdateUI() // The method that actually updates the text

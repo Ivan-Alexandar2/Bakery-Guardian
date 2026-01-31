@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 8181650352891280638}
   - component: {fileID: -5765356706200683327}
   m_Layer: 8
-  m_Name: FriendlyUnit
+  m_Name: Baker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

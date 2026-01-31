@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class Unit : MonoBehaviour
 {
     [Header("Setup")]
-    public UnitStats stats; // Drag the ScriptableObject here
+    public UnitStats stats;
 
     // Runtime variables
     protected float currentHealth;

@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\NPCs\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\BuildButtons.cs" />
     <Compile Include="Assets\Scripts\Managers\DayNightManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\EnemyWaveManager.cs" />
     <Compile Include="Assets\Scripts\GameButtons.cs" />
     <Compile Include="Assets\Scripts\BuildingUIManager.cs" />
     <Compile Include="Assets\Scripts\NPCs\UnitStats.cs" />

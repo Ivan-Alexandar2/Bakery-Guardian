@@ -42,7 +42,7 @@ public class WorkerAI : Unit
         {
             case WorkerState.Gathering:
                 harvestTimer += Time.deltaTime;
-
+                transform.LookAt(myWorkplace.transform);
                 if (harvestTimer >= stats.harvestTime)
                 {
                     harvestTimer = 0;
@@ -117,6 +117,7 @@ public class WorkerAI : Unit
     void HandleSunrise()
     {
         // When we wake up (SetActive true), we reset state
+        gameObject.SetActive(true);
         currentState = WorkerState.Returning;
         if (myWorkplace != null)
             agent.SetDestination(myWorkplace.transform.position);
