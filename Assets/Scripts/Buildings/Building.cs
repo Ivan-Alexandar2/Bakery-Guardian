@@ -25,7 +25,23 @@ public class Building : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
-            Destroy(gameObject); // Or trigger explosion effects
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        // 1. Logic: If this is the main base, Game Over?
+        if (gameObject.CompareTag("MainBase"))
+        {
+            Debug.Log("GAME OVER");
+            //Time.timeScale = 0; // Pause game
+        }
+
+        // 2. Logic: Eject workers (The "Refugee" logic we discussed)
+        // (We will add this later)
+
+        // 3. Destroy
+        Destroy(gameObject);
     }
 }

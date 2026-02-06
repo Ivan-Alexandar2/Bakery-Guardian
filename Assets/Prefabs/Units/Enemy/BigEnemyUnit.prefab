@@ -286,7 +286,10 @@ MonoBehaviour:
   detectionRange: 10
   targetLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
+  buildingLayer:
+    serializedVersion: 2
+    m_Bits: 0
   checkRate: 0.5
   currentTarget: {fileID: 0}
   timer: 0

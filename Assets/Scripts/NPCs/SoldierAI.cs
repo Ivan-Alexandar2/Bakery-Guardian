@@ -66,31 +66,25 @@ public class SoldierAI : Unit
                 break;
 
             case State.Chase:
-                // Hints:
-                // Check if target is null (died?). If so, go back to Idle.
-                // Move towards target using agent.SetDestination.
-                // Check Distance: if (distance <= stats.attackRange) -> Switch to Attack
-
                 if (currentTarget == null)
                 {
                     currentState = State.Patrol;
                     SetRandomPatrolPoint();
                     break;
                 }
-                
+
+                // MOVEMENT
                 agent.SetDestination(currentTarget.position);
 
-                if(Vector3.Distance(transform.position, currentTarget.position) <= stats.attackRange) currentState = State.Attack;
-                
+                // DECISION: Use the Universal Ruler
+                if (GetDistanceToTarget() <= stats.attackRange)
+                {
+                    currentState = State.Attack;
+                    agent.ResetPath(); // Stop moving instantly
+                }
                 break;
 
             case State.Attack:
-                // Hints:
-                // Stop moving (agent.ResetPath).
-                // Look at enemy (transform.LookAt).
-                // Check Distance: if (distance > stats.attackRange) -> Switch to Chase (He ran away!)
-                // If (attackCooldown <= 0) -> PerformAttack();
-
                 if (currentTarget == null)
                 {
                     currentState = State.Patrol;
@@ -99,9 +93,16 @@ public class SoldierAI : Unit
 
                 agent.ResetPath();
                 transform.LookAt(currentTarget);
-                if (Vector3.Distance(transform.position, currentTarget.position) > stats.attackRange) currentState = State.Chase;
-                if(attackCooldown <= 0) PerformAttack();
 
+                // DECISION: Use the SAME Universal Ruler
+                // Only chase if we are genuinely out of range
+                // We add a tiny buffer (+ 0.5f) to prevent micro-twitching at the edge
+                if (GetDistanceToTarget() > stats.attackRange + 0.5f)
+                {
+                    currentState = State.Chase;
+                }
+
+                if (attackCooldown <= 0) PerformAttack();
                 break;
         }
     }
@@ -130,17 +131,40 @@ public class SoldierAI : Unit
         attackCooldown = stats.attackSpeed;
 
         // Get the enemy script (Using our universal Unit class)
-        Unit enemy = currentTarget.GetComponent<Unit>();
+        Unit enemy = currentTarget.GetComponentInParent<Unit>();
         if (enemy != null)
         {
             enemy.TakeDamage(stats.damage);
             Debug.Log(name + " hit " + enemy.name + " for " + stats.damage);
         }
 
-        Building building = currentTarget.GetComponent<Building>();
+        Building building = currentTarget.GetComponentInParent<Building>();
         if (building != null)
         {
             building.TakeDamage(stats.damage);
+            Debug.Log("CALLEDAAAAAAAAAAAA");
+        }
+    }
+
+    protected float GetDistanceToTarget()
+    {
+        if (currentTarget == null) return 999f;
+
+        // 1. Try to find a collider on the target (or its children!)
+        // We use GetComponentInChildren because your Root object might not have a collider,
+        // but the "Body" child definitely does.
+        Collider targetCol = currentTarget.GetComponentInChildren<Collider>();
+
+        if (targetCol != null)
+        {
+            // Smart Math: Distance to the closest point on the surface
+            Vector3 closestPoint = targetCol.ClosestPoint(transform.position);
+            return Vector3.Distance(transform.position, closestPoint);
+        }
+        else
+        {
+            // Dumb Math: Fallback to center
+            return Vector3.Distance(transform.position, currentTarget.position);
         }
     }
 }
