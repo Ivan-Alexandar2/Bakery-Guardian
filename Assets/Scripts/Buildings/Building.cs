@@ -19,4 +19,13 @@ public class Building : MonoBehaviour
         // Only if I forget to set current health in inspector
         if (health == 0) health = maxHealth;
     }
+
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+        if (health <= 0)
+        {
+            Destroy(gameObject); // Or trigger explosion effects
+        }
+    }
 }

@@ -73,13 +73,13 @@ public class CameraController : MonoBehaviour
         currentVelocity = Vector3.SmoothDamp(currentVelocity, targetPos, ref velocityRef, movementSmoothTime);
 
         // Apply
-        transform.position += currentVelocity * Time.deltaTime;
+        transform.position += currentVelocity * Time.unscaledDeltaTime;
     }
 
     void HandleRotation()
     {
-        if (Input.GetKey(KeyCode.Q)) targetRotation += rotateSpeed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.E)) targetRotation -= rotateSpeed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.Q)) targetRotation += rotateSpeed * Time.unscaledDeltaTime;
+        if (Input.GetKey(KeyCode.E)) targetRotation -= rotateSpeed * Time.unscaledDeltaTime;
 
         // Smooth rotation
         currentRotation = Mathf.SmoothDampAngle(currentRotation, targetRotation, ref rotationRef, rotationSmoothTime);
@@ -91,7 +91,7 @@ public class CameraController : MonoBehaviour
     void HandleZoom()
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-        targetHeight -= scroll * scrollSpeed * Time.deltaTime;
+        targetHeight -= scroll * scrollSpeed * Time.unscaledDeltaTime;
         targetHeight = Mathf.Clamp(targetHeight, heightLimits.x, heightLimits.y);
 
         // Smooth height

@@ -154,7 +154,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 32c4f236f5f24084fb104c2dc051d877, type: 2}
   myWorkplace: {fileID: 0}
   myDepot: {fileID: 0}
-  resourceToGather: 1
+  resourceToGather: 0
   currentState: 0
   currentLoad: 0
   harvestTimer: 0

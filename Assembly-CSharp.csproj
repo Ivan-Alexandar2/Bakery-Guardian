@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\BuildingUIManager.cs" />
     <Compile Include="Assets\Scripts\NPCs\UnitStats.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\NPCs\Projectile.cs" />
     <Compile Include="Assets\Scripts\Buildings\Building.cs" />
     <Compile Include="Assets\Scripts\NPCs\SoldierAI.cs" />
     <Compile Include="Assets\Scripts\Managers\SelectionManager.cs" />

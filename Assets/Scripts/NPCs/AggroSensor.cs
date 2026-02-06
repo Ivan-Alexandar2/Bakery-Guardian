@@ -3,8 +3,8 @@ using UnityEngine;
 public class AggroSensor : MonoBehaviour
 {
     public float detectionRange = 10f;
-    public LayerMask targetLayer; // Set this to "Enemy" in Inspector
-    public float checkRate = 0.5f; // Optimization: Don't check every frame!
+    public LayerMask targetLayer; // Set this in Inspector
+    public float checkRate = 0.5f; // Optimization: don't check every frame
 
     [SerializeField] private Transform currentTarget;
     [SerializeField] private float timer;

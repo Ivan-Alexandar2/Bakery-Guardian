@@ -136,5 +136,11 @@ public class SoldierAI : Unit
             enemy.TakeDamage(stats.damage);
             Debug.Log(name + " hit " + enemy.name + " for " + stats.damage);
         }
+
+        Building building = currentTarget.GetComponent<Building>();
+        if (building != null)
+        {
+            building.TakeDamage(stats.damage);
+        }
     }
 }
