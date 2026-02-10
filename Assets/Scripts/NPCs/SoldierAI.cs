@@ -142,7 +142,6 @@ public class SoldierAI : Unit
         if (building != null)
         {
             building.TakeDamage(stats.damage);
-            Debug.Log("CALLEDAAAAAAAAAAAA");
         }
     }
 

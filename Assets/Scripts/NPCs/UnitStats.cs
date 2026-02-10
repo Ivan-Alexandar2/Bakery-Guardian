@@ -24,6 +24,11 @@ public class UnitStats : ScriptableObject
     public int spawnCost = 5;      // How many points this enemy costs
     public int minDayToSpawn = 1;  // Unlocks on Day X
     public GameObject enemyPrefab; // The actual thing to spawn
+
+    [Header("Loot")]
+    [Range(0, 100)]
+    public float gemDropChance = 20f; // Default 20%
+    public int gemAmount = 1;
 }
 
 public enum UnitType

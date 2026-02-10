@@ -29,20 +29,23 @@ public class Projectile : MonoBehaviour
             if (other.TryGetComponent(out Unit unit))
             {
                 unit.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
             }
             else if (other.TryGetComponent(out Building building))
             {
                 building.TakeDamage(damage);
+                Destroy(gameObject);
+                return;
             }
-
-            Destroy(gameObject);
         }
     }
 
     // Setup method for the Shooter to call
-    public void Setup(float newDamage, LayerMask newLayer)
+    public void Setup(float newDamage, LayerMask newLayer, float newSpeed)
     {
         damage = newDamage;
         targetLayer = newLayer;
+        speed = newSpeed;
     }
 }

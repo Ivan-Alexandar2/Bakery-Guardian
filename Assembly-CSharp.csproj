@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\NPCs\WorkerAI.cs" />
+    <Compile Include="Assets\Scripts\NPCs\TowerAI.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\NPCs\AggroSensor.cs" />
     <Compile Include="Assets\Scripts\UnitSpawner.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\Scripts\Managers\SelectionManager.cs" />
     <Compile Include="Assets\Scripts\Buildings\ResourceDepot.cs" />
     <Compile Include="Assets\Scripts\NPCs\Unit.cs" />
+    <Compile Include="Assets\Scripts\NPCs\RangedAI.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Buildings\BuildingPlacementManager.cs" />
   </ItemGroup>

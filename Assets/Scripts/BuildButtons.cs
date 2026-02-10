@@ -29,14 +29,12 @@ public class BuildButtons : MonoBehaviour
 
     public void ClickResourceMenu()
     {
-        gameManager.TryBuyBuilding(building.buildingCost);
         FindObjectOfType<BuildingPlacementManager>().StartPlacing(buildingPrefab, buildingBlueprint);
         gameButtons.resourceBuildingMenu.SetActive(false);
     }
 
     public void ClickDefenseMenu()
     {
-        gameManager.TryBuyBuilding(building.buildingCost);
         FindObjectOfType<BuildingPlacementManager>().StartPlacing(buildingPrefab, buildingBlueprint);
         gameButtons.defenseBuildingMenu.SetActive(false);
     }

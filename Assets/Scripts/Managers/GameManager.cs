@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
        resourceInventory.Add(ResourceType.Wood, 8);
-       resourceInventory.Add(ResourceType.Bread, 20);
+       resourceInventory.Add(ResourceType.Bread, 60);
        resourceInventory.Add(ResourceType.Fish, 0);
        resourceInventory.Add(ResourceType.Stone, 0);
        resourceInventory.Add(ResourceType.Gems, 0);
@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2)) Time.timeScale = 2f;
         if (Input.GetKeyDown(KeyCode.Alpha3)) Time.timeScale = 3f;
         if (Input.GetKeyDown(KeyCode.Alpha4)) Time.timeScale = 4f;
+        if (Input.GetKeyDown(KeyCode.Alpha5)) Time.timeScale = 5f;
 
     }
 
