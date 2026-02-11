@@ -25,18 +25,28 @@ public class Projectile : MonoBehaviour
         // Bitwise math check: Is the object's layer inside our targetLayer mask?
         if ((targetLayer.value & (1 << other.gameObject.layer)) > 0)
         {
-            // 2. Deal Damage (Try Unit, then Building)
-            if (other.TryGetComponent(out Unit unit))
+            bool hitSomething = false;
+
+            Unit unit = other.GetComponentInParent<Unit>();
+            if (unit != null)
             {
                 unit.TakeDamage(damage);
-                Destroy(gameObject);
-                return;
+                hitSomething = true;
             }
-            else if (other.TryGetComponent(out Building building))
+
+            else
             {
-                building.TakeDamage(damage);
+                Building building = other.GetComponentInParent<Building>();
+                if (building != null)
+                {
+                    building.TakeDamage(damage);
+                    hitSomething = true;
+                }
+            }
+
+            if (hitSomething)
+            {
                 Destroy(gameObject);
-                return;
             }
         }
     }

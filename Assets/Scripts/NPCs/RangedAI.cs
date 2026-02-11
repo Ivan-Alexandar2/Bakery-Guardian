@@ -6,6 +6,11 @@ public class RangedAI : SoldierAI
     public Projectile projectilePrefab;
     public Transform firePoint;
 
+    private void Start()
+    {
+        base.Start();
+    }
+
     protected override void PerformAttack()
     {
         // Reset the cooldown (inherited from SoldierAI)

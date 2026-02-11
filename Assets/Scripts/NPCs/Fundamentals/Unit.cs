@@ -17,6 +17,10 @@ public class Unit : MonoBehaviour
     public Action<float, float> OnHealthChanged; // Current, Max
     public Action OnDeath;
 
+    [Header("UI")]
+    public HealthBar healthBarPrefab; // Drag the Prefab here
+    [SerializeField] private HealthBar myHealthBar;
+
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -34,6 +38,20 @@ public class Unit : MonoBehaviour
         {
             Debug.LogError("Unit Stats missing on " + gameObject.name);
         }
+
+        if (healthBarPrefab != null)
+        {
+            myHealthBar = Instantiate(healthBarPrefab, transform.position, Quaternion.identity);
+
+            // Determine Color
+            Color teamColor = Color.green; // Default Ally
+            if (gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            {
+                teamColor = Color.red;
+            }
+
+            myHealthBar.Setup(transform, stats.maxHealth, teamColor);
+        }
     }
 
     public virtual void TakeDamage(float amount)
@@ -41,7 +59,7 @@ public class Unit : MonoBehaviour
         currentHealth -= amount;
 
         OnHealthChanged?.Invoke(currentHealth, stats.maxHealth);
-
+        myHealthBar.UpdateHealth(currentHealth, stats.maxHealth);
         if (currentHealth <= 0)
         {
             Die();
@@ -73,5 +91,21 @@ public class Unit : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    // Health bar cleanup stuff
+    void OnDisable()
+    {
+        if (myHealthBar != null) myHealthBar.gameObject.SetActive(false);
+    }
+
+    void OnEnable()
+    {
+        if (myHealthBar != null) myHealthBar.gameObject.SetActive(true);
+    }
+
+    void OnDestroy()
+    {
+        if (myHealthBar != null) Destroy(myHealthBar.gameObject);
     }
 }

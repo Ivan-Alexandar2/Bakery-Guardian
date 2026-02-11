@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46f26ef0ca4e9c34e95a72778c4bad32, type: 3}
-  m_Name: ShiealBearer
+  m_Name: ShiealdBearer
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
   unitName: Shield Bearer
   unitType: 1
@@ -21,3 +21,8 @@ MonoBehaviour:
   attackSpeed: 2
   resourceCapacity: 0
   harvestTime: 0
+  spawnCost: 5
+  minDayToSpawn: 1
+  enemyPrefab: {fileID: 0}
+  gemDropChance: 0
+  gemAmount: 1

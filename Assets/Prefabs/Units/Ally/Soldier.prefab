@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8145024372066711374}
   - component: {fileID: 6813267569331563671}
   - component: {fileID: 4289706452294650994}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sword lmao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoldierAI
   stats: {fileID: 11400000, guid: 49a1eca09724e494596b4721404978cb, type: 2}
+  healthBarPrefab: {fileID: 8096992175296828625, guid: ca2e5463cefbce6428302a85d8ab08d0, type: 3}
   sensor: {fileID: 3816806235383890389}
   guardPoint: {fileID: 0}
   patrolRadius: 15

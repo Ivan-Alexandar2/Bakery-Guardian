@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   stats: {fileID: 11400000, guid: a499dfc492e925340980cc8dda55ad52, type: 2}
+  healthBarPrefab: {fileID: 8096992175296828625, guid: ca2e5463cefbce6428302a85d8ab08d0, type: 3}
   sensor: {fileID: 192122043595651339}
   guardPoint: {fileID: 0}
   patrolRadius: 10
@@ -287,9 +288,6 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 384
-  buildingLayer:
-    serializedVersion: 2
-    m_Bits: 0
   checkRate: 0.5
   currentTarget: {fileID: 0}
   timer: 0
