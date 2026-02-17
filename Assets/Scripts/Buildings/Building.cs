@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Dependencies.Sqlite.SQLite3;
 
 public class Building : MonoBehaviour
 {
@@ -10,14 +11,16 @@ public class Building : MonoBehaviour
     public float health;
     public float maxHealth;
 
-    //public GameObject NPC; // will be an NPC script in the future
+    [Header("Economy")]
+    public ResourceType costType;
+    public int buildCost = 100;
+
     public float timeForNPCSpawn;
     public Sprite icon;
 
     void Start()
     {
-        // Only if I forget to set current health in inspector
-        if (health == 0) health = maxHealth;
+        health = maxHealth;
     }
 
     public void TakeDamage(float amount)
@@ -43,5 +46,20 @@ public class Building : MonoBehaviour
 
         // 3. Destroy
         Destroy(gameObject);
+    }
+
+    public void Demolish()
+    {
+        // 1. Calculate Refund (50%)
+        int refundAmount = Mathf.FloorToInt(buildCost * 0.5f);
+        GameManager manager = FindObjectOfType<GameManager>();
+        // 2. Give back resources
+        // (Ensure GameManager is accessible!)
+        manager.AddResource(costType, refundAmount);
+
+        Debug.Log($"Demolished {name}. Refunded {refundAmount} {costType}.");
+
+        // 3. Die (This handles the explosion/destroy logic you already have)
+        Die();
     }
 }

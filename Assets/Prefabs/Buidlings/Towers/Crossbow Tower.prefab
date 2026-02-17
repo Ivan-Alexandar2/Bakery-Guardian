@@ -210,11 +210,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingCost:
   - type: 0
-    amount: 5
+    amount: 10
   unitSpawnCost: []
-  health: 400
-  maxHealth: 400
-  timeForNPCSpawn: 5
+  health: 350
+  maxHealth: 350
+  timeForNPCSpawn: 0
   icon: {fileID: 21300000, guid: f94ca994f1fcf3f4eb873833da3b1038, type: 3}
 --- !u!114 &852308695120011320
 MonoBehaviour:
@@ -229,12 +229,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerAI
   sensor: {fileID: 5270780047511055701}
-  projectilePrefab: {fileID: 7995410402709718545, guid: d0ce99406a265fc4c9400903de46cae2, type: 3}
+  projectilePrefab: {fileID: -1200022162697400776, guid: c7596eb3562f0294ab69729e4332b3aa, type: 3}
   firePoint: {fileID: 2848520755833395454}
   rotatingPart: {fileID: 2259432332494147329}
-  damage: 25
+  damage: 30
   fireRate: 5
-  projectileSpeed: 30
+  projectileSpeed: 40
 --- !u!114 &5270780047511055701
 MonoBehaviour:
   m_ObjectHideFlags: 0

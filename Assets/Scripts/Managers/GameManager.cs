@@ -30,7 +30,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI fishText;
     [SerializeField] private TextMeshProUGUI gemsText;
 
+    public static GameManager Instance;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
        resourceInventory.Add(ResourceType.Wood, 8);

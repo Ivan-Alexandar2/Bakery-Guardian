@@ -15,7 +15,7 @@ MonoBehaviour:
   unitName: Rogue
   unitType: 1
   maxHealth: 125
-  moveSpeed: 6.5
+  moveSpeed: 7
   damage: 8
   attackRange: 1.5
   attackSpeed: 3

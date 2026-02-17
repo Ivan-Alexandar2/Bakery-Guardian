@@ -48,8 +48,6 @@ public class WorkerAI : Unit
                     harvestTimer = 0;
                     currentLoad++;
 
-                    Debug.Log("Harvested! Load: " + currentLoad);
-
                     // Is backpack full?
                     if (currentLoad >= stats.resourceCapacity)
                     {

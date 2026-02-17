@@ -26,7 +26,6 @@ public class SelectionManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Didn't click on anything");
                     Deselect();
                 }
             }

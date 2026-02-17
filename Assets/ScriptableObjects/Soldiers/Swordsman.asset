@@ -15,7 +15,7 @@ MonoBehaviour:
   unitName: Swordsman
   unitType: 1
   maxHealth: 100
-  moveSpeed: 3.5
+  moveSpeed: 5
   damage: 10
   attackRange: 2
   attackSpeed: 1.5

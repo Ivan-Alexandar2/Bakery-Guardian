@@ -3,10 +3,10 @@ using UnityEngine;
 public class TowerAI : MonoBehaviour
 {
     [Header("Setup")]
-    public AggroSensor sensor;         // Reuse the same sensor script!
+    public AggroSensor sensor;
     public Projectile projectilePrefab;
-    public Transform firePoint;        // Where the arrow comes out
-    public Transform rotatingPart;     // Optional: Only rotate the "Head", not the base
+    public Transform firePoint;
+    public Transform rotatingPart;
 
     [Header("Stats")]
     public float damage = 25f;
@@ -37,22 +37,28 @@ public class TowerAI : MonoBehaviour
         //       - Setup projectile (pass 'damage' and 'sensor.targetLayer').
         //       - Reset cooldown.
 
-        if (currentTarget == null) sensor.GetTarget();
+        //if (currentTarget == null) sensor.GetTarget();
 
-        rotatingPart.LookAt(currentTarget);
-        attackCooldown -= Time.deltaTime;
+        //if(currentTarget != null)
+        //{
+        //    rotatingPart.LookAt(currentTarget);
+        //    attackCooldown -= Time.deltaTime;
 
-        if(attackCooldown <= 0)
-        {
-            Instantiate(projectilePrefab);
-            projectilePrefab.Setup(damage, sensor.targetLayer, projectileSpeed);
-            attackCooldown = fireRate;
-        }
+        //    if (attackCooldown <= 0)
+        //    {
+        //        Instantiate(projectilePrefab);
+        //        projectilePrefab.Setup(damage, sensor.targetLayer, projectileSpeed);
+        //        attackCooldown = fireRate;
+        //    }
+        //}
+        
+        
 
         // 1. Assign the target
         if (currentTarget == null)
         {
             currentTarget = sensor.GetTarget();
+            rotatingPart.transform.rotation = Quaternion.identity;
         }
 
         // 2. Only run combat if we HAVE a target

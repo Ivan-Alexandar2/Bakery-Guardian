@@ -8,9 +8,9 @@ public class BuildingUIManager : MonoBehaviour
     public TextMeshProUGUI buildingNameText;
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI spawnCostText;
-    public Button spawnNPCButton;
+    public Button spawnButton;
     public Image buildingSprite;
-    public Image[] resourceSprites;
+    //public Image[] resourceSprites;
 
     [Header("Spawning UI")]
     public Slider spawnProgressBar;
@@ -27,22 +27,30 @@ public class BuildingUIManager : MonoBehaviour
     {
         // 1. Optimization: Only update if the menu is actually open!
         if (menuPanel.activeSelf == false) return;
-        healthSlider.value = currentBuilding.health;
 
-        if (currentSpawner != null)
-        { 
-            spawnProgressBar.value = currentSpawner.GetProgress();
-            queueText.text = "Queue: " + currentSpawner.GetQueueCount();
+        // 2. Update Health Slider
+        if (currentBuilding != null)
+        {
+            healthSlider.value = currentBuilding.health;
 
-            // UPDATE THE TIMER TEXT (Formatted to 1 decimal place, e.g. "3.5s")
+            // Update Button Interaction (Grey out if full)
             if (currentSpawner != null)
             {
-                spawnProgressBar.value = currentSpawner.GetProgress();
-                queueText.text = "Queue: " + currentSpawner.GetQueueCount();
-
-                float timeRem = currentSpawner.GetTimeRemaining();
-                timerText.text = (timeRem > 0) ? timeRem.ToString("F1") + "s" : "Idle";
+                spawnButton.interactable = !currentSpawner.IsFull;
             }
+        }
+
+        // 3. Update Spawner UI (Progress Bar & Queue)
+        if (currentSpawner != null)
+        {
+            spawnProgressBar.value = currentSpawner.GetProgress();
+
+            // Show Queue count
+            queueText.text = "Queue: " + currentSpawner.GetQueueCount();
+
+            // Formatted Timer: "3.5s"
+            float timeRem = currentSpawner.GetTimeRemaining();
+            timerText.text = (timeRem > 0) ? timeRem.ToString("F1") + "s" : "Idle";
         }
     }
 
@@ -87,15 +95,13 @@ public class BuildingUIManager : MonoBehaviour
         if (currentSpawner != null)
         {
             spawnToolsGroup.SetActive(true);
-            spawnNPCButton.interactable = true;
+            spawnButton.interactable = true;
         }
         else
         {
             spawnToolsGroup.SetActive(false);
-            spawnNPCButton.interactable = false;
+            spawnButton.interactable = false;
         }
-
-        // TODO: Update the cost buttons based on buildingData.npcSpawnCost
     }
 
     public void CloseMenu()
@@ -105,9 +111,24 @@ public class BuildingUIManager : MonoBehaviour
 
     public void OnSpawnButtonClicked() // LINK THIS TO THE BUTTON
     {
-        if (currentSpawner != null)
+        if (currentSpawner == null) return;
+
+        // 1. CHECK LIMIT
+        if (currentSpawner.IsFull)
         {
-            currentSpawner.AttemptQueueUnit();
+            Debug.Log("Barracks is full!");
+            return;
         }
+        currentSpawner.AttemptQueueUnit();
+        // 2. ASK SPAWNER TO HANDLE IT
+        // We don't touch the GameManager here. The Spawner does.
+        //if (currentSpawner.AttemptQueueUnit())
+        //{
+            
+        //}
+        //else
+        //{
+        //    Debug.Log("Cannot afford unit!");
+        //}
     }
 }

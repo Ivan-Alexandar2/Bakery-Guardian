@@ -10,7 +10,7 @@ public class Unit : MonoBehaviour
     public UnitStats stats;
 
     // Runtime variables
-    protected float currentHealth;
+    internal protected float currentHealth; // used in HealerSensor
     protected NavMeshAgent agent;
 
     // Events for other scripts to listen to (like Health Bar UI)
@@ -64,6 +64,14 @@ public class Unit : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > stats.maxHealth) currentHealth = stats.maxHealth;
+
+        if (myHealthBar != null) myHealthBar.UpdateHealth(currentHealth, stats.maxHealth);
     }
 
     protected virtual void Die()

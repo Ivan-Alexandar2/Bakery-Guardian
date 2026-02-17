@@ -17,7 +17,7 @@ public class SoldierAI : Unit
     [SerializeField] protected State currentState;
     [SerializeField] protected Transform currentTarget;
     protected float attackCooldown;
-    private float patrolTimer;
+    protected float patrolTimer;
 
     protected override void Start()
     {
@@ -66,21 +66,29 @@ public class SoldierAI : Unit
                 break;
 
             case State.Chase:
-                if (currentTarget == null)
+                if (currentTarget == null) { currentState = State.Patrol; break; }
+
+                // --- NEW: THE LEASH (GIVE UP LOGIC) ---
+                float distToTarget = Vector3.Distance(transform.position, currentTarget.position);
+
+                // If the target ran too far away (e.g., 20 meters), give up.
+                // Or if WE ran too far from our guard post (e.g., 30 meters).
+                if (distToTarget > sensor.detectionRange * 1.5f)
                 {
-                    currentState = State.Patrol;
-                    SetRandomPatrolPoint();
+                    Debug.Log("Target escaped! Returning to post.");
+                    currentTarget = null;
+                    agent.ResetPath();
+                    currentState = State.Patrol; // Or ReturnToGuardPoint
                     break;
                 }
 
-                // MOVEMENT
                 agent.SetDestination(currentTarget.position);
 
-                // DECISION: Use the Universal Ruler
+                // (Your existing attack range check here...)
                 if (GetDistanceToTarget() <= stats.attackRange)
                 {
                     currentState = State.Attack;
-                    agent.ResetPath(); // Stop moving instantly
+                    agent.ResetPath();
                 }
                 break;
 
@@ -107,7 +115,7 @@ public class SoldierAI : Unit
         }
     }
 
-    void SetRandomPatrolPoint()
+    protected void SetRandomPatrolPoint()
     {
         // Get a random point inside a sphere
         Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
@@ -135,7 +143,6 @@ public class SoldierAI : Unit
         if (enemy != null)
         {
             enemy.TakeDamage(stats.damage);
-            Debug.Log(name + " hit " + enemy.name + " for " + stats.damage);
         }
 
         Building building = currentTarget.GetComponentInParent<Building>();
