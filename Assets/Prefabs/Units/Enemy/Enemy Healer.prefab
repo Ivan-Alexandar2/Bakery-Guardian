@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 420693858941134225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.228, z: 0.73}
+  m_LocalPosition: {x: 0, y: 0.228, z: 1.132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -540,6 +540,7 @@ MonoBehaviour:
   healingProjectilePrefab: {fileID: 7155668525274983070, guid: 0f74a63920417fc488d434b1f6e8a452, type: 3}
   firePoint: {fileID: 1863474190719155747}
   followDistance: 5
+  dangerTriggerDist: 0
 --- !u!114 &2725909969240789949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15adff880a529b84497dd241aab2b035, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealerSensor
-  detectionRange: 60
+  detectionRange: 120
   targetLayer:
     serializedVersion: 2
     m_Bits: 512

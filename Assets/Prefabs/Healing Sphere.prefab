@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 334678687270879214}
   - component: {fileID: 2867954335225386207}
   - component: {fileID: 8902768403540246497}
+  - component: {fileID: -4687411790574685435}
   - component: {fileID: 191489577209315330}
   m_Layer: 0
   m_Name: Healing Sphere
@@ -113,6 +114,33 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-4687411790574685435
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7155668525274983070}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &191489577209315330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,11 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287e8713b6f89ca468a5b1fe39ce5403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealingSphere
-  speed: 30
-  damage: 0
-  lifetime: 5
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  healingArea: {fileID: 4600847304433924502, guid: a88367ecae881c64d8208a3151e8c737, type: 3}
-  healingAreaLifetime: 4
+  healingAreaPrefab: {fileID: 4600847304433924502, guid: a88367ecae881c64d8208a3151e8c737, type: 3}
+  speed: 10

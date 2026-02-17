@@ -22,7 +22,6 @@ public class HealingSphere : MonoBehaviour
         // Hit the ground OR an ally?
         // Simple check: Just explode on anything except the shooter?
         // Ideally: Explode if we hit the floor or the target.
-
         GameObject areaObj = Instantiate(healingAreaPrefab, transform.position, Quaternion.identity);
         HealingArea areaScript = areaObj.GetComponent<HealingArea>();
         areaScript.Setup(allyLayer);

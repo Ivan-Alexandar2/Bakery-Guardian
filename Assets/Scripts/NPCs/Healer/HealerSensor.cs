@@ -31,7 +31,6 @@ public class HealerSensor : AggroSensor // Reuse the range/timer logic!
 
     public Transform GetClosestAlly()
     {
-        // 1. Get all friends in range
         Collider[] friends = Physics.OverlapSphere(transform.position, detectionRange, targetLayer);
 
         Transform bestTarget = null;
@@ -39,11 +38,15 @@ public class HealerSensor : AggroSensor // Reuse the range/timer logic!
 
         foreach (Collider col in friends)
         {
-            // Don't follow myself!
+            // FIX 1: Is this ME? If so, skip.
             if (col.gameObject == this.gameObject) continue;
 
-            // Find the closest one
+            // FIX 2: Is this part of my own hierarchy? (e.g. my own sensor child object)
+            // This prevents detecting your own child colliders.
+            if (col.transform.root == transform.root) continue;
+
             float d = Vector3.Distance(transform.position, col.transform.position);
+
             if (d < closestDist)
             {
                 closestDist = d;
