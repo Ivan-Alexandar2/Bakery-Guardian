@@ -53,16 +53,16 @@ public class HealingArea : MonoBehaviour
         // If yes, Get Component<Unit>
         // If not null AND not already in list -> patients.Add(unit);
 
+        // 1. Check Layer
         if ((targetLayer.value & (1 << other.gameObject.layer)) > 0)
         {
-            // 2. Get the Unit component (Look in parent just in case)
+            // 2. Find Unit
             Unit unit = other.GetComponentInParent<Unit>();
 
-            // 3. Add to List (Only if valid AND not already in the list)
             if (unit != null && !patients.Contains(unit))
             {
                 patients.Add(unit);
-                // particle effect will go here someday
+                Debug.Log($"<color=green>Healing Area: Added {unit.name}</color>");
             }
         }
     }
@@ -86,5 +86,6 @@ public class HealingArea : MonoBehaviour
     public void Setup(LayerMask layerToHeal)
     {
         targetLayer = layerToHeal;
+        Debug.Log($"Healing Area looking for layer: {targetLayer.value}");
     }
 }

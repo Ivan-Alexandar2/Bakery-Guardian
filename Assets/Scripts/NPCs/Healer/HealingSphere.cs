@@ -1,14 +1,32 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))] // shot sum prost
 public class HealingSphere : MonoBehaviour
 {
     public GameObject healingAreaPrefab;
     public float speed = 15f;
-    private LayerMask allyLayer;
+    private LayerMask targetLayer;
 
-    public void Setup(LayerMask layer)
+    // physics and stuff
+    public float throwForce = 10f;
+    public float upwardArc = 2f;
+    private bool hasDeployed = false;
+
+    public void Setup(LayerMask layer, Collider shooterCollider)
     {
-        allyLayer = layer;
+        targetLayer = layer;
+
+        if (shooterCollider != null)
+        {
+            Collider myCollider = GetComponent<Collider>();
+            Physics.IgnoreCollision(myCollider, shooterCollider);
+        }
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.isKinematic = false; // Ensure physics is ON
+        Vector3 force = transform.forward * throwForce + Vector3.up * upwardArc;
+        rb.AddForce(force, ForceMode.Impulse);
+
         Destroy(gameObject, 5f); // Safety cleanup
     }
 
@@ -17,14 +35,22 @@ public class HealingSphere : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        // Hit the ground OR an ally?
-        // Simple check: Just explode on anything except the shooter?
-        // Ideally: Explode if we hit the floor or the target.
-        GameObject areaObj = Instantiate(healingAreaPrefab, transform.position, Quaternion.identity);
-        HealingArea areaScript = areaObj.GetComponent<HealingArea>();
-        areaScript.Setup(allyLayer);
+        if (hasDeployed) return;
+
+        hasDeployed = true;
+        DeployHealingArea();
         Destroy(gameObject);
+    }
+
+    void DeployHealingArea()
+    {
+        // Spawn slightly up so it doesn't clip into the ground
+        Vector3 spawnPos = transform.position + Vector3.up * 0.1f;
+        GameObject area = Instantiate(healingAreaPrefab, spawnPos, Quaternion.identity);
+
+        // Pass the target layer to the area
+        area.GetComponent<HealingArea>().Setup(targetLayer);
     }
 }

@@ -99,9 +99,11 @@ public class EnemyHealerAI : HealerAI
         if (healingProjectilePrefab != null && firePoint != null)
         {
             GameObject proj = Instantiate(healingProjectilePrefab, firePoint.position, transform.rotation);
+            HealingSphere sphere = proj.GetComponent<HealingSphere>();
             // Setup the projectile to ignore "Enemy" layer and heal "Enemy" layer
             // (Remember: Sensor Target Layer for Enemy Healer is "Enemy")
-            proj.GetComponent<HealingSphere>().Setup(sensor.targetLayer);
+            Collider myCollider = GetComponent<Collider>();
+            sphere.Setup(sensor.targetLayer, myCollider);
         }
     }
 }
