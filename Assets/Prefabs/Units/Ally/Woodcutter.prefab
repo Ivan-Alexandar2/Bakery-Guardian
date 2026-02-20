@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7092639925128480390}
   - component: {fileID: 8621293014156375604}
   - component: {fileID: 1105377108866718853}
+  - component: {fileID: 9138976232756229001}
   m_Layer: 8
   m_Name: Woodcutter
   m_TagString: Untagged
@@ -153,12 +154,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WorkerAI
   stats: {fileID: 11400000, guid: 32c4f236f5f24084fb104c2dc051d877, type: 2}
   healthBarPrefab: {fileID: 8096992175296828625, guid: ca2e5463cefbce6428302a85d8ab08d0, type: 3}
+  myHealthBar: {fileID: 0}
   myWorkplace: {fileID: 0}
   myDepot: {fileID: 0}
   resourceToGather: 0
+  aggroSensor: {fileID: 9138976232756229001}
+  searchInterval: 1
   currentState: 0
   currentLoad: 0
   harvestTimer: 0
+--- !u!114 &9138976232756229001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583784386004862696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3658cbf4101e54a932a872a64a4bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AggroSensor
+  detectionRange: 10
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  checkRate: 0.5
+  currentTarget: {fileID: 0}
+  timer: 0
 --- !u!1 &7840618773646990272
 GameObject:
   m_ObjectHideFlags: 0

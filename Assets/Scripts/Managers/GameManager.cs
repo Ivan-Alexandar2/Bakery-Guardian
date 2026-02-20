@@ -32,13 +32,15 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    public List<Building> allWorkplaces = new List<Building>();
+
     private void Awake()
     {
         Instance = this;
     }
     void Start()
     {
-       resourceInventory.Add(ResourceType.Wood, 8);
+       resourceInventory.Add(ResourceType.Wood, 80);
        resourceInventory.Add(ResourceType.Bread, 60);
        resourceInventory.Add(ResourceType.Fish, 0);
        resourceInventory.Add(ResourceType.Stone, 0);
@@ -127,4 +129,32 @@ public class GameManager : MonoBehaviour
         }
         UpdateUI();
     }
+
+    #region BUILDING SEARCH 
+    // Helper for Buildings to register themselves
+    public void RegisterWorkplace(Building b)
+    {
+        if (!allWorkplaces.Contains(b)) allWorkplaces.Add(b);
+    }
+
+    public void UnregisterWorkplace(Building b)
+    {
+        if (allWorkplaces.Contains(b)) allWorkplaces.Remove(b);
+    }
+
+    // The "Job Search" method
+    public Building GetFirstAvailableWorkplace(ResourceType preferredType)
+    {
+        foreach (Building b in allWorkplaces)
+        {
+            // Optional: You can filter by ResourceType if you want lumberjacks to stay lumberjacks
+            // For now, let's just find ANY open job
+            if (b.HasFreeSpace())
+            {
+                return b;
+            }
+        }
+        return null;
+    }
+    #endregion
 }

@@ -15,12 +15,18 @@ public class Building : MonoBehaviour
     public ResourceType costType;
     public int buildCost = 100;
 
+    [Header("Worker Management")]
+    public int maxWorkers = 3;
+    public List<WorkerAI> currentWorkers = new List<WorkerAI>();
+
     public float timeForNPCSpawn;
     public Sprite icon;
 
     void Start()
     {
         health = maxHealth;
+
+        GameManager.Instance.RegisterWorkplace(this);
     }
 
     public void TakeDamage(float amount)
@@ -61,5 +67,33 @@ public class Building : MonoBehaviour
 
         // 3. Die (This handles the explosion/destroy logic you already have)
         Die();
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.UnregisterWorkplace(this);
+    }
+
+    public bool HasFreeSpace()
+    {
+        // Clean list of dead workers first
+        currentWorkers.RemoveAll(w => w == null);
+        return currentWorkers.Count < maxWorkers;
+    }
+
+    public void AddWorker(WorkerAI worker)
+    {
+        if (!currentWorkers.Contains(worker))
+        {
+            currentWorkers.Add(worker);
+        }
+    }
+
+    public void RemoveWorker(WorkerAI worker)
+    {
+        if (currentWorkers.Contains(worker))
+        {
+            currentWorkers.Remove(worker);
+        }
     }
 }

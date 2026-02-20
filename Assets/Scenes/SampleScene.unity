@@ -2394,6 +2394,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyUnit (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2727,6 +2731,10 @@ PrefabInstance:
     - target: {fileID: 8455947179247378822, guid: b6d3b3fb2cc93d449821a1a30ea106e8, type: 3}
       propertyPath: m_Name
       value: Enemy Healer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455947179247378822, guid: b6d3b3fb2cc93d449821a1a30ea106e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3568,6 +3576,10 @@ PrefabInstance:
     - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
       propertyPath: m_Name
       value: EnemyUnit (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4542,6 +4554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 473029516287416478, guid: e8f8b1aa052144e4296f671523a5ff54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2339622990261825314, guid: e8f8b1aa052144e4296f671523a5ff54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 185.83478
@@ -4845,6 +4861,7 @@ MonoBehaviour:
   breadText: {fileID: 453928163}
   fishText: {fileID: 547437410}
   gemsText: {fileID: 487051127}
+  allWorkplaces: []
 --- !u!4 &887330800
 Transform:
   m_ObjectHideFlags: 0
@@ -5140,6 +5157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5365,6 +5386,10 @@ PrefabInstance:
     - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
       propertyPath: m_Name
       value: EnemyUnit (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6682,6 +6707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7269,6 +7298,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7745,6 +7778,10 @@ PrefabInstance:
     - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
       propertyPath: m_Name
       value: Soldier (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8677,6 +8714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9136,6 +9177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyUnit (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9192,6 +9237,10 @@ PrefabInstance:
     - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
       propertyPath: m_Name
       value: EnemyUnit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10627,6 +10676,8 @@ MonoBehaviour:
   maxHealth: 150
   costType: 0
   buildCost: 100
+  maxWorkers: 3
+  currentWorkers: []
   timeForNPCSpawn: 5
   icon: {fileID: 21300000, guid: f94ca994f1fcf3f4eb873833da3b1038, type: 3}
 --- !u!33 &7606520532211016718
