@@ -82,22 +82,14 @@ public class Unit : MonoBehaviour
         {
             // Roll the dice (0 to 100)
             float roll = UnityEngine.Random.Range(0f, 100f);
-            GameManager manager = FindObjectOfType<GameManager>();
-
 
             if (roll <= stats.gemDropChance)
             {
-                // Winner!
-                Debug.Log($"<color=cyan>GEM DROP! Rolled {roll} vs {stats.gemDropChance}</color>");
+                //Debug.Log($"<color=cyan>GEM DROP! Rolled {roll} vs {stats.gemDropChance}</color>");
 
-                // Add to Global Inventory
-                // (Assuming GameManager is Singleton "Instance")
-                manager.AddResource(ResourceType.Gems, stats.gemAmount);
-
-                // Optional: Spawn a visual "Floating Gem" effect here later!
+                GameManager.Instance.AddResource(ResourceType.Gems, stats.gemAmount);
             }
         }
-
         Destroy(gameObject);
     }
 

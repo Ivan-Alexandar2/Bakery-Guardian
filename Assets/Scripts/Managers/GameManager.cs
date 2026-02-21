@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-       resourceInventory.Add(ResourceType.Wood, 80);
-       resourceInventory.Add(ResourceType.Bread, 60);
+       resourceInventory.Add(ResourceType.Wood, 8);
+       resourceInventory.Add(ResourceType.Bread, 20);
        resourceInventory.Add(ResourceType.Fish, 0);
        resourceInventory.Add(ResourceType.Stone, 0);
        resourceInventory.Add(ResourceType.Gems, 0);
@@ -143,18 +143,18 @@ public class GameManager : MonoBehaviour
     }
 
     // The "Job Search" method
-    public Building GetFirstAvailableWorkplace(ResourceType preferredType)
+    public Building GetFirstAvailableWorkplace(string requiredJobType)
     {
         foreach (Building b in allWorkplaces)
         {
-            // Optional: You can filter by ResourceType if you want lumberjacks to stay lumberjacks
-            // For now, let's just find ANY open job
-            if (b.HasFreeSpace())
+            // 1. Must match the exact job type (Bakery == Bakery)
+            // 2. Must have free space
+            if (b.jobType == requiredJobType && b.HasFreeSpace())
             {
                 return b;
             }
         }
-        return null;
+        return null; // Nobody is hiring for this job right now
     }
     #endregion
 }

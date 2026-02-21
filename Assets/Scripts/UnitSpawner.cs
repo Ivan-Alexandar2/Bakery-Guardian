@@ -93,6 +93,15 @@ public class UnitSpawner : MonoBehaviour
         }
     }
 
+    public void AdoptUnit(GameObject refugee)
+    {
+        if (!aliveUnits.Contains(refugee))
+        {
+            aliveUnits.Add(refugee);
+            Debug.Log($"{gameObject.name} adopted a refugee! Total workers: {aliveUnits.Count}");
+        }
+    }
+
     public float GetProgress()
     {
         if (queuedUnits == 0) return 0;

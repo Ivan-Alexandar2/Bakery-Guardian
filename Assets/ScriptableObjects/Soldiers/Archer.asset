@@ -17,7 +17,7 @@ MonoBehaviour:
   maxHealth: 60
   moveSpeed: 3
   damage: 15
-  attackRange: 8
+  attackRange: 10
   attackSpeed: 3.5
   resourceCapacity: 0
   harvestTime: 0

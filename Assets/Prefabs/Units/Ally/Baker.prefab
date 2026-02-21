@@ -270,8 +270,11 @@ MonoBehaviour:
   myWorkplace: {fileID: 0}
   myDepot: {fileID: 0}
   resourceToGather: 1
+  myJobType: 
   aggroSensor: {fileID: -2500054928374106664}
   searchInterval: 1
+  patrolRadius: 16
+  patrolWaitTime: 3
   currentState: 0
   currentLoad: 0
   harvestTimer: 0

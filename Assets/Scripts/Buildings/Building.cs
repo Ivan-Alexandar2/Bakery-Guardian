@@ -21,11 +21,10 @@ public class Building : MonoBehaviour
 
     public float timeForNPCSpawn;
     public Sprite icon;
-
+    public string jobType; // Type "Bakery", "Hospital"...
     void Start()
     {
         health = maxHealth;
-
         GameManager.Instance.RegisterWorkplace(this);
     }
 
@@ -76,9 +75,21 @@ public class Building : MonoBehaviour
 
     public bool HasFreeSpace()
     {
-        // Clean list of dead workers first
-        currentWorkers.RemoveAll(w => w == null);
-        return currentWorkers.Count < maxWorkers;
+        UnitSpawner spawner = GetComponent<UnitSpawner>();
+        if (spawner != null)
+        {
+            return !spawner.IsFull; // Uses your existing limit!
+        }
+        return false;
+    }
+
+    public void AdoptWorker(WorkerAI worker)
+    {
+        UnitSpawner spawner = GetComponent<UnitSpawner>();
+        if (spawner != null)
+        {
+            spawner.AdoptUnit(worker.gameObject);
+        }
     }
 
     public void AddWorker(WorkerAI worker)

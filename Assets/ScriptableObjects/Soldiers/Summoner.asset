@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46f26ef0ca4e9c34e95a72778c4bad32, type: 3}
-  m_Name: EnemyHealer
+  m_Name: Summoner
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
-  unitName: Enemy Healer
-  unitType: 2
-  maxHealth: 60
-  moveSpeed: 4.5
-  damage: 0
-  attackRange: 10
-  attackSpeed: 2
+  unitName: Summoner
+  unitType: 1
+  maxHealth: 150
+  moveSpeed: 3.5
+  damage: 30
+  attackRange: 8
+  attackSpeed: 1.5
   resourceCapacity: 0
   harvestTime: 0
-  spawnCost: 1
-  minDayToSpawn: 1
-  enemyPrefab: {fileID: 8455947179247378822, guid: b6d3b3fb2cc93d449821a1a30ea106e8, type: 3}
-  gemDropChance: 60
-  gemAmount: 2
+  spawnCost: 0
+  minDayToSpawn: 0
+  enemyPrefab: {fileID: 0}
+  gemDropChance: 0
+  gemAmount: 0

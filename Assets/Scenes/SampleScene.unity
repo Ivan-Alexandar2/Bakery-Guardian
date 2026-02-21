@@ -3434,7 +3434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 873eb71f81e165240962656fc3f8b4dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 821c88854d4425040bf7b16a3d1c01a3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3600,7 +3600,7 @@ GameObject:
   - component: {fileID: 609576801}
   - component: {fileID: 609576800}
   m_Layer: 5
-  m_Name: 6
+  m_Name: Hospital
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3645,7 +3645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 873eb71f81e165240962656fc3f8b4dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b12c86536e21604bab9c1d108652d5b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3675,11 +3675,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfdcccc71e315a45ae9e787507d617b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
-  buildingPrefab: {fileID: 9057805498737952800, guid: fad15d9e3365fa64eb15c4e8a38199d8, type: 3}
+  buildingPrefab: {fileID: 3386524775575388077, guid: 6d6b1f8129156bc429bafbcfe1808b0a, type: 3}
   buildingBlueprint: {fileID: 3564840298244346446, guid: 8798993b4de8a6943b5cf5e12aa99fcc, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
-  building: {fileID: 0}
+  building: {fileID: 7089847687722004126, guid: 6d6b1f8129156bc429bafbcfe1808b0a, type: 3}
 --- !u!114 &609576801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5014,7 +5014,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 873eb71f81e165240962656fc3f8b4dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a907881ec3a9244b92d01b8badb90e5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9849,7 +9849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 873eb71f81e165240962656fc3f8b4dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e612a3a7d79a8742834d780c541c845, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10680,6 +10680,7 @@ MonoBehaviour:
   currentWorkers: []
   timeForNPCSpawn: 5
   icon: {fileID: 21300000, guid: f94ca994f1fcf3f4eb873833da3b1038, type: 3}
+  jobType: Bakery
 --- !u!33 &7606520532211016718
 MeshFilter:
   m_ObjectHideFlags: 0

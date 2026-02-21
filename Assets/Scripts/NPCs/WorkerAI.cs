@@ -8,6 +8,7 @@ public class WorkerAI : Unit
     public Building myWorkplace;
     public ResourceDepot myDepot;
     public ResourceType resourceToGather = ResourceType.Bread; // What does this worker make?
+    public string myJobType;
 
     [Header("Refugee Settings")]
     public AggroSensor aggroSensor;
@@ -15,6 +16,13 @@ public class WorkerAI : Unit
     private float searchTimer;
     private float combatCooldown;
     private Unit combatTarget;
+
+    [Header("Refugee Patrol Settings")]
+    public float patrolRadius = 16f;     // How far from the bakery they can wander
+    public float patrolWaitTime = 3f;   // How long they stand still before picking a new spot
+    private float patrolTimer;
+    private bool isPatrollingBase = false;
+
 
     [Header("Debug")]
     [SerializeField] private WorkerState currentState;
@@ -25,8 +33,6 @@ public class WorkerAI : Unit
     {
         base.Start();
 
-        // Coach Tip: Find the depot ONCE. If you build depots dynamically,
-        // we will need a "FindClosestDepot" method later.
         myDepot = FindObjectOfType<ResourceDepot>();
 
         DayNightManager.Instance.OnNightStart += HandleNightfall;
@@ -34,6 +40,11 @@ public class WorkerAI : Unit
 
         // Start by working
         currentState = WorkerState.Returning;
+
+        if (myWorkplace != null)
+        {
+            myJobType = myWorkplace.jobType;
+        }
     }
 
     // Don't forget OnDestroy or the game errors when you reload scenes!
@@ -140,14 +151,17 @@ public class WorkerAI : Unit
         if (searchTimer >= searchInterval)
         {
             searchTimer = 0;
-            Building newJob = GameManager.Instance.GetFirstAvailableWorkplace(ResourceType.Wood); // Or generic
+
+            // USE THE MEMORIZED JOB TYPE HERE!
+            Building newJob = GameManager.Instance.GetFirstAvailableWorkplace(myJobType);
 
             if (newJob != null)
             {
-                // Found a job! Re-assign and return to normal
                 myWorkplace = newJob;
-                myWorkplace.AddWorker(this);
-                // Reset combat stuff
+                isPatrollingBase = false;
+                // Use the new Adopt method
+                myWorkplace.AdoptWorker(this);
+
                 combatTarget = null;
                 agent.ResetPath();
                 return;
@@ -168,12 +182,37 @@ public class WorkerAI : Unit
         }
         else
         {
-            // 3. NO JOB, NO ENEMIES -> Guard the Base
+            // 3. NO JOB, NO ENEMIES -> Patrol around the Base
             // (This prevents them from standing still in the woods)
             GameObject baseObj = GameObject.FindGameObjectWithTag("MainBase");
-            if (baseObj != null && Vector3.Distance(transform.position, baseObj.transform.position) > 10f)
+            if (baseObj != null)
             {
-                agent.SetDestination(baseObj.transform.position);
+                // Are we standing still / reached our destination?
+                if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+                {
+                    patrolTimer += Time.deltaTime;
+
+                    // Time to pick a new spot!
+                    if (patrolTimer >= patrolWaitTime || !isPatrollingBase)
+                    {
+                        patrolTimer = 0;
+                        isPatrollingBase = true;
+
+                        // 1. Pick a random 2D circle point
+                        Vector2 randomCircle = Random.insideUnitCircle * patrolRadius;
+
+                        // 2. Convert to 3D world position around the Base
+                        Vector3 randomTarget = baseObj.transform.position + new Vector3(randomCircle.x, 0, randomCircle.y);
+
+                        // 3. (Crucial) Ask the NavMesh for the closest walkable point 
+                        // so they don't try to walk inside a tree or wall
+                        UnityEngine.AI.NavMeshHit hit;
+                        if (UnityEngine.AI.NavMesh.SamplePosition(randomTarget, out hit, patrolRadius, UnityEngine.AI.NavMesh.AllAreas))
+                        {
+                            agent.SetDestination(hit.position);
+                        }
+                    }
+                }
             }
         }
     }
@@ -203,6 +242,7 @@ public class WorkerAI : Unit
         {
             // Chase
             agent.SetDestination(combatTarget.transform.position);
+            isPatrollingBase = false;
         }
     }
 }
