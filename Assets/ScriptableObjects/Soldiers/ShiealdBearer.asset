@@ -15,8 +15,8 @@ MonoBehaviour:
   unitName: Shield Bearer
   unitType: 1
   maxHealth: 220
-  moveSpeed: 2
-  damage: 5
+  moveSpeed: 2.5
+  damage: 6
   attackRange: 1.5
   attackSpeed: 2
   resourceCapacity: 0

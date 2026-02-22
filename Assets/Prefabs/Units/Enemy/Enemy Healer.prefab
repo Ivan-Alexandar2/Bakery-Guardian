@@ -533,7 +533,7 @@ MonoBehaviour:
   currentState: 0
   currentTarget: {fileID: 0}
   healAmount: 10
-  healRate: 2
+  healRate: 5
   fleeDistance: 15
   patientSensor: {fileID: 1682923974724403732}
   dangerSensor: {fileID: 2725909969240789949}

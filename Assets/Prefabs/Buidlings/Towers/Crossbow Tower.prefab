@@ -210,12 +210,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingCost:
   - type: 0
-    amount: 10
+    amount: 15
   unitSpawnCost: []
   health: 350
   maxHealth: 350
+  costType: 0
+  buildCost: 100
+  maxWorkers: 3
+  currentWorkers: []
   timeForNPCSpawn: 0
   icon: {fileID: 21300000, guid: f94ca994f1fcf3f4eb873833da3b1038, type: 3}
+  jobType: 
 --- !u!114 &852308695120011320
 MonoBehaviour:
   m_ObjectHideFlags: 0

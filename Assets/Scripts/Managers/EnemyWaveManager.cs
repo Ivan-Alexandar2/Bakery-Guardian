@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// The manager that handles the enemy spawning system
+/// </summary>
 public class EnemyWaveManager : MonoBehaviour
 {
     [Header("Configuration")]
     public List<UnitStats> enemyCatalog; // Drag ALL enemy scriptable objects here
-    public Transform mainBase;           // Drag your Bakery/MainBase here
-    public float mapRadius = 50f;        // How big is your map?
+    public Transform mainBase;
+    public float mapRadius = 50f;
     public float safeZoneRadius = 15f;   // Don't spawn closer than this to base
 
     [Header("Difficulty Settings")]

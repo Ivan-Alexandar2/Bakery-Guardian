@@ -119,7 +119,7 @@ public class SoldierAI : Unit
     {
         // Get a random point inside a sphere
         Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
-        randomDirection += guardPoint.position;
+        if(guardPoint != null) randomDirection += guardPoint.position; // null check cuz of the main bakery
 
         // Find the nearest valid spot on the NavMesh
         NavMeshHit hit;

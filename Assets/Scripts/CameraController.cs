@@ -70,7 +70,7 @@ public class CameraController : MonoBehaviour
         // 3. Smoothing (Inertia)
         Vector3 targetPos = desireDir * speed;
         // Smoothly change our current velocity towards the target velocity
-        currentVelocity = Vector3.SmoothDamp(currentVelocity, targetPos, ref velocityRef, movementSmoothTime);
+        currentVelocity = Vector3.SmoothDamp(currentVelocity, targetPos, ref velocityRef, movementSmoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
 
         // Apply
         transform.position += currentVelocity * Time.unscaledDeltaTime;
@@ -82,7 +82,7 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.E)) targetRotation -= rotateSpeed * Time.unscaledDeltaTime;
 
         // Smooth rotation
-        currentRotation = Mathf.SmoothDampAngle(currentRotation, targetRotation, ref rotationRef, rotationSmoothTime);
+        currentRotation = Mathf.SmoothDampAngle(currentRotation, targetRotation, ref rotationRef, rotationSmoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
 
         // Apply rotation (Keep X and Z tilt the same, only change Y)
         transform.rotation = Quaternion.Euler(transform.eulerAngles.x, currentRotation, 0f);
@@ -95,7 +95,7 @@ public class CameraController : MonoBehaviour
         targetHeight = Mathf.Clamp(targetHeight, heightLimits.x, heightLimits.y);
 
         // Smooth height
-        currentHeight = Mathf.SmoothDamp(currentHeight, targetHeight, ref heightRef, zoomSmoothTime);
+        currentHeight = Mathf.SmoothDamp(currentHeight, targetHeight, ref heightRef, zoomSmoothTime, Mathf.Infinity, Time.unscaledDeltaTime);
 
         Vector3 pos = transform.position;
         pos.y = currentHeight;

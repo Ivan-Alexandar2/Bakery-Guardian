@@ -61,6 +61,7 @@
     <Analyzer Include="D:\Unity\6000.3.4f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Buildings\Blueprint.cs" />
     <Compile Include="Assets\Scripts\NPCs\WorkerAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\TowerAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\Fundamentals\UnitStats.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Scripts\GameButtons.cs" />
     <Compile Include="Assets\Scripts\NPCs\Healer\HealingArea.cs" />
     <Compile Include="Assets\Scripts\NPCs\Fundamentals\Unit.cs" />
+    <Compile Include="Assets\Scripts\Buildings\WaterBuilding.cs" />
     <Compile Include="Assets\Scripts\NPCs\Fundamentals\Projectile.cs" />
     <Compile Include="Assets\Scripts\BuildingUIManager.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />

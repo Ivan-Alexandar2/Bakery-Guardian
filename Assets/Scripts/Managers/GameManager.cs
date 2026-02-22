@@ -1,7 +1,11 @@
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
+
+/// <summary>
+/// The manager that handles resources and any resource related action.
+/// It also keeps track of all built structures & lose condition
+/// </summary>
 
 [System.Serializable]
 public struct ResourceCost
@@ -33,6 +37,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public List<Building> allWorkplaces = new List<Building>();
+    [SerializeField] private GameObject mainBakery;
 
     private void Awake()
     {
@@ -40,8 +45,8 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-       resourceInventory.Add(ResourceType.Wood, 8);
-       resourceInventory.Add(ResourceType.Bread, 20);
+       resourceInventory.Add(ResourceType.Wood, 800);
+       resourceInventory.Add(ResourceType.Bread, 2000);
        resourceInventory.Add(ResourceType.Fish, 0);
        resourceInventory.Add(ResourceType.Stone, 0);
        resourceInventory.Add(ResourceType.Gems, 0);
@@ -131,6 +136,7 @@ public class GameManager : MonoBehaviour
     }
 
     #region BUILDING SEARCH 
+
     // Helper for Buildings to register themselves
     public void RegisterWorkplace(Building b)
     {
@@ -157,4 +163,9 @@ public class GameManager : MonoBehaviour
         return null; // Nobody is hiring for this job right now
     }
     #endregion
+
+    public void Lose()
+    {
+
+    }
 }

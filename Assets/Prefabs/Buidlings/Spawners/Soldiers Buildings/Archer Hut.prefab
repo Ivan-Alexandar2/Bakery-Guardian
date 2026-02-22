@@ -200,8 +200,13 @@ MonoBehaviour:
     amount: 10
   health: 125
   maxHealth: 125
+  costType: 0
+  buildCost: 100
+  maxWorkers: 5
+  currentWorkers: []
   timeForNPCSpawn: 15
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  jobType: 
 --- !u!114 &6784421699198575958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +221,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitSpawner
   unitPrefab: {fileID: 2440227993306225886, guid: 7531e084dfef56b4d843790655bc14bc, type: 3}
   spawnPoint: {fileID: 7069193158459845762}
+  maxUnitCount: 5
+  aliveUnits: []
 --- !u!1 &8045463284616673659
 GameObject:
   m_ObjectHideFlags: 0

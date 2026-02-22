@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 5923120153033311759}
   - component: {fileID: 7385692282488640396}
   m_Layer: 0
-  m_Name: Blueprint
+  m_Name: no
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

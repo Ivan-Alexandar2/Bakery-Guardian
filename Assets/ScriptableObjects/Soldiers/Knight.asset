@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
   unitName: Knight
   unitType: 1
-  maxHealth: 300
+  maxHealth: 375
   moveSpeed: 3
-  damage: 12
+  damage: 35
   attackRange: 2.5
-  attackSpeed: 1.75
+  attackSpeed: 1
   resourceCapacity: 0
   harvestTime: 0
-  spawnCost: 5
-  minDayToSpawn: 1
+  spawnCost: 0
+  minDayToSpawn: 0
   enemyPrefab: {fileID: 0}
   gemDropChance: 0
-  gemAmount: 1
+  gemAmount: 0

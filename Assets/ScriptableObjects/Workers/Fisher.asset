@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f26ef0ca4e9c34e95a72778c4bad32, type: 3}
   m_Name: Fisher
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
-  unitName: 
+  unitName: Fisher
   unitType: 0
-  maxHealth: 40
+  maxHealth: 55
   moveSpeed: 3.5
-  damage: 3
+  damage: 4
   attackRange: 2
   attackSpeed: 1.5
-  resourceCapacity: 1
-  harvestTime: 25
+  resourceCapacity: 3
+  harvestTime: 18
+  spawnCost: 0
+  minDayToSpawn: 0
+  enemyPrefab: {fileID: 0}
+  gemDropChance: 0
+  gemAmount: 0

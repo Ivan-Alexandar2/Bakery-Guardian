@@ -40,6 +40,10 @@ public class HealerSensor : AggroSensor // Reuse the range/timer logic!
         {
             // FIX 1: Is this ME? If so, skip.
             if (col.gameObject == this.gameObject) continue;
+            if (col.transform.root == transform.root) continue;
+
+            if (col.GetComponentInParent<EnemyHealerAI>() != null) continue;
+
 
             // FIX 2: Is this part of my own hierarchy? (e.g. my own sensor child object)
             // This prevents detecting your own child colliders.

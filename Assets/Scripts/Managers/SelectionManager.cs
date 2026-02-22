@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// The manager that handles the selection of any building and opens/closes the info panel
+/// </summary>
 public class SelectionManager : MonoBehaviour
 {
     public LayerMask buildingLayer;
