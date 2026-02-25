@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI breadText;
     [SerializeField] private TextMeshProUGUI fishText;
     [SerializeField] private TextMeshProUGUI gemsText;
+    [SerializeField] private GameObject losePanel;
 
     public static GameManager Instance;
 
@@ -45,8 +46,8 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-       resourceInventory.Add(ResourceType.Wood, 800);
-       resourceInventory.Add(ResourceType.Bread, 2000);
+       resourceInventory.Add(ResourceType.Wood, 8);
+       resourceInventory.Add(ResourceType.Bread, 20);
        resourceInventory.Add(ResourceType.Fish, 0);
        resourceInventory.Add(ResourceType.Stone, 0);
        resourceInventory.Add(ResourceType.Gems, 0);
@@ -68,6 +69,8 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3)) Time.timeScale = 3f;
         if (Input.GetKeyDown(KeyCode.Alpha4)) Time.timeScale = 4f;
         if (Input.GetKeyDown(KeyCode.Alpha5)) Time.timeScale = 5f;
+
+        if(mainBakery == null) Lose();
 
     }
 
@@ -166,6 +169,6 @@ public class GameManager : MonoBehaviour
 
     public void Lose()
     {
-
+        losePanel.SetActive(true);
     }
 }

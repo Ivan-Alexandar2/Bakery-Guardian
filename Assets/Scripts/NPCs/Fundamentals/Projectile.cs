@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
         transform.Translate(speed * Time.deltaTime * Vector3.forward);
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         // 1. Check Layer (Are we hitting a valid target?)
         // Bitwise math check: Is the object's layer inside our targetLayer mask?

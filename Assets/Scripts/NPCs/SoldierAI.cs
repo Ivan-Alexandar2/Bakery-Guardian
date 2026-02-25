@@ -132,10 +132,6 @@ public class SoldierAI : Unit
     // "Virtual" means "Archers can change how this works"
     protected virtual void PerformAttack()
     {
-        // Default Melee Logic:
-        // 1. Reset Cooldown (attackCooldown = stats.attackSpeed)
-        // 2. Get Unit component from target
-        // 3. Deal Damage
         attackCooldown = stats.attackSpeed;
 
         // Get the enemy script (Using our universal Unit class)

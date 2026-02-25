@@ -6,7 +6,7 @@ public class AggroSensor : MonoBehaviour
     public LayerMask targetLayer; // Set this in Inspector
     public float checkRate = 0.5f; // Optimization: don't check every frame
 
-    [SerializeField] private Transform currentTarget;
+    [SerializeField] protected Transform currentTarget;
     [SerializeField] private float timer;
 
     void Update()
@@ -19,7 +19,7 @@ public class AggroSensor : MonoBehaviour
         }
     }
 
-    void ScanForEnemies()
+    protected virtual void ScanForEnemies()
     {
         // Physics check
         Collider[] enemies = Physics.OverlapSphere(transform.position, detectionRange, targetLayer);

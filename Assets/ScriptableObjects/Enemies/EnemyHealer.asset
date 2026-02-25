@@ -21,8 +21,8 @@ MonoBehaviour:
   attackSpeed: 8
   resourceCapacity: 0
   harvestTime: 0
-  spawnCost: 1
-  minDayToSpawn: 1
+  spawnCost: 3
+  minDayToSpawn: 3
   enemyPrefab: {fileID: 8455947179247378822, guid: b6d3b3fb2cc93d449821a1a30ea106e8, type: 3}
   gemDropChance: 60
   gemAmount: 2
