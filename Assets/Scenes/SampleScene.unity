@@ -3897,6 +3897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Summoner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8067140841451076681, guid: 2eabaffd88bce6d42882e0cf05354c8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5215,7 +5219,7 @@ PrefabInstance:
     - target: {fileID: 4648888228687041411, guid: 2eabaffd88bce6d42882e0cf05354c8d, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 654075004}
+      objectReference: {fileID: 1571172566}
     - target: {fileID: 6377750851109880193, guid: 2eabaffd88bce6d42882e0cf05354c8d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5223,6 +5227,10 @@ PrefabInstance:
     - target: {fileID: 8067140841451076681, guid: 2eabaffd88bce6d42882e0cf05354c8d, type: 3}
       propertyPath: m_Name
       value: Summoner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067140841451076681, guid: 2eabaffd88bce6d42882e0cf05354c8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11601,7 +11609,7 @@ GameObject:
   - component: {fileID: 2135679567}
   - component: {fileID: 2135679566}
   m_Layer: 5
-  m_Name: Bakery
+  m_Name: Summoners Prism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11646,7 +11654,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1e612a3a7d79a8742834d780c541c845, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 550ece9a8b739bd45bf40df4f81c40f4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11676,11 +11684,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfdcccc71e315a45ae9e787507d617b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
-  buildingPrefab: {fileID: 2862601177990619326, guid: 45ee05dbe642dec49bce19fc2874e9e3, type: 3}
+  buildingPrefab: {fileID: 8903410948171230040, guid: ac470ca4bedb92745933ec3ed2a48d7e, type: 3}
   buildingBlueprint: {fileID: 1765390967383835381, guid: c33b214247b6d004ab281bf5d0ea0998, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
-  building: {fileID: 1066446815199138009, guid: f0f60552c5efa60408b6a93c202ac6bf, type: 3}
+  building: {fileID: 270283390572514628, guid: ac470ca4bedb92745933ec3ed2a48d7e, type: 3}
 --- !u!114 &2135679567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11971,6 +11979,10 @@ PrefabInstance:
     - target: {fileID: 8067140841451076681, guid: 2eabaffd88bce6d42882e0cf05354c8d, type: 3}
       propertyPath: m_Name
       value: Summoner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8067140841451076681, guid: 2eabaffd88bce6d42882e0cf05354c8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -3,13 +3,15 @@ using UnityEngine;
 public class FireBall : Projectile
 {
     private float sphereRadius = 3f;
+    [SerializeField] private GameObject explosionPrefab;
 
     protected override void OnTriggerEnter(Collider other)
     {
-        //base.OnTriggerEnter(other);
-
-
-        Explode();
+        base.OnTriggerEnter(other);
+        if ((targetLayer.value & (1 << other.gameObject.layer)) > 0)
+        {
+            Explode();
+        }
     }
 
     private void Explode()
@@ -29,10 +31,7 @@ public class FireBall : Projectile
             }
         }
 
-        // Optional: Spawn a cool explosion particle effect here!
-        // Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-
-        // 3. Destroy the Fireball
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
