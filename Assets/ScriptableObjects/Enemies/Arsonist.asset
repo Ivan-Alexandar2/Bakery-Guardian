@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46f26ef0ca4e9c34e95a72778c4bad32, type: 3}
-  m_Name: Berserker
+  m_Name: Arsonist
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
-  unitName: Berserker
-  unitType: 1
-  maxHealth: 200
-  moveSpeed: 3.5
-  damage: 12
-  attackRange: 1.5
-  attackSpeed: 0.8
+  unitName: 
+  unitType: 0
+  maxHealth: 120
+  moveSpeed: 5
+  damage: 0
+  attackRange: 10
+  attackSpeed: 4
   resourceCapacity: 0
   harvestTime: 0
-  spawnCost: 5
-  minDayToSpawn: 1
+  spawnCost: 2
+  minDayToSpawn: 2
   enemyPrefab: {fileID: 0}
-  gemDropChance: 0
+  gemDropChance: 45
   gemAmount: 1

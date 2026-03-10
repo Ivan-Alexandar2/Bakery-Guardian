@@ -212,8 +212,8 @@ MonoBehaviour:
   - type: 0
     amount: 15
   unitSpawnCost: []
-  health: 350
-  maxHealth: 350
+  health: 250
+  maxHealth: 250
   costType: 0
   buildCost: 100
   maxWorkers: 3

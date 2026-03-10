@@ -63,8 +63,8 @@ MonoBehaviour:
   buildCost: 100
   maxWorkers: 3
   currentWorkers: []
-  timeForNPCSpawn: 5
-  icon: {fileID: 21300000, guid: f94ca994f1fcf3f4eb873833da3b1038, type: 3}
+  timeForNPCSpawn: 20
+  icon: {fileID: 21300000, guid: b2fca1012c1688f4689b41df862a2c45, type: 3}
   jobType: 
 --- !u!114 &9005895640259940885
 MonoBehaviour:
