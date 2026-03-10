@@ -35,8 +35,8 @@ public class Molotov : Projectile
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
+    private void OnCollisionEnter(Collision collision) // Collision and not trigger for testing the molly dropping only on the ground
+    {                                                  // and not trigger on units
         if (hasDeployed) return;
 
         hasDeployed = true;
@@ -47,9 +47,9 @@ public class Molotov : Projectile
     void DeployFireArea()
     {
         // Spawn slightly up so it doesn't clip into the ground
-        Vector3 spawnPos = transform.position + Vector3.up * 0.1f;
+        Vector3 spawnPos = transform.position + Vector3.up * 0.5f;
         GameObject area = Instantiate(firePrefab, spawnPos, Quaternion.identity);
 
-        area.GetComponent<HealingArea>().Setup(targetLayer);
+        area.GetComponent<FireArea>().Setup(targetLayer);
     }    
 }

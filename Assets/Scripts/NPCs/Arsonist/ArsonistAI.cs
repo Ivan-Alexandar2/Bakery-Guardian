@@ -14,8 +14,6 @@ public class ArsonistAI : EnemyRangedAI
 
     protected override void PerformAttack()
     {
-        base.PerformAttack();
-
         Vector3 center = (firePoint.transform.position - currentTarget.position) * 0.5f;
 
         center -= new Vector3(0, 1, 0);
@@ -25,7 +23,10 @@ public class ArsonistAI : EnemyRangedAI
 
         float fracComplete = (Time.time - throwTime) / journeyTime;
 
+        base.PerformAttack();
+
         projectilePrefab.transform.position = Vector3.Slerp(selfRelCenter, targetRelCenter, fracComplete);
         projectilePrefab.transform.position += center;
+    
     }
 }

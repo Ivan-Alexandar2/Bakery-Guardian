@@ -696,6 +696,7 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
+      - m_Data: -29712
       - m_Data: -1296
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -1264,9 +1265,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 200.6995, y: -26.61924, z: 166.92802}
+    m_Target: {x: 214.91797, y: 49.95938, z: 69.33117}
     speed: 2
-    m_Value: {x: 200.6995, y: -26.61924, z: 166.92802}
+    m_Value: {x: 214.91797, y: 49.95938, z: 69.33117}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1312,13 +1313,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.35436895, y: -0.06409323, z: 0.024715023, w: -0.9330005}
+    m_Target: {x: -0.3150674, y: -0.05709559, z: 0.01944904, w: -0.94762015}
     speed: 2
-    m_Value: {x: -0.35419986, y: -0.065187156, z: 0.025130367, w: -0.9325565}
+    m_Value: {x: -0.31842583, y: -0.052458048, z: 0.018117836, w: -0.9463218}
   m_Size:
-    m_Target: 60.43894
+    m_Target: 0.004068274
     speed: 2
-    m_Value: 63.286846
+    m_Value: 0.003893085
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1456,7 +1457,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/NPCs/Arsonist
+    - Assets/Prefabs/Units/Enemy
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1466,34 +1467,33 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/NPCs/Arsonist
+  - Assets/Prefabs/Units/Enemy
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity Repos\Rebuild TD
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 300}
+    scrollPos: {x: 0, y: 121.20001}
     m_SelectedIDs:
-    - m_Data: 50842
+    - m_Data: 50830
     m_LastClickedID:
-      m_Data: 50842
+      m_Data: 50830
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 50648
-    - m_Data: 50650
-    - m_Data: 50652
-    - m_Data: 50654
-    - m_Data: 50656
-    - m_Data: 50658
-    - m_Data: 50660
-    - m_Data: 50662
-    - m_Data: 50802
+    - m_Data: 50692
+    - m_Data: 50694
+    - m_Data: 50696
+    - m_Data: 50698
+    - m_Data: 50700
+    - m_Data: 50702
+    - m_Data: 50706
+    - m_Data: 50820
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Ally
+      m_OriginalName: Ally
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -1501,10 +1501,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 0
+        m_Data: 50828
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 10}
@@ -1522,14 +1522,14 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 50648
-    - m_Data: 50650
-    - m_Data: 50652
-    - m_Data: 50654
-    - m_Data: 50656
-    - m_Data: 50658
-    - m_Data: 50660
-    - m_Data: 50662
+    - m_Data: 50692
+    - m_Data: 50694
+    - m_Data: 50696
+    - m_Data: 50698
+    - m_Data: 50700
+    - m_Data: 50702
+    - m_Data: 50704
+    - m_Data: 50706
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1558,12 +1558,12 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: []
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Explosion
+      m_OriginalName: Explosion
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -1571,10 +1571,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 0
+        m_Data: 52318
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 10}
@@ -1861,7 +1861,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 1159.2
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
