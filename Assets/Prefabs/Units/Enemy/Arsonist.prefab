@@ -274,7 +274,7 @@ MonoBehaviour:
   patrolWaitTime: 3
   currentState: 0
   currentTarget: {fileID: 0}
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 1906309329139716198, guid: 6cc7ccfb264a2254e8813fde44c0b279, type: 3}
   firePoint: {fileID: 3793774137273815424}
   journeyTime: 1
 --- !u!114 &6725581782032915365

@@ -501,7 +501,7 @@ MonoBehaviour:
   patrolWaitTime: 3
   currentState: 0
   currentTarget: {fileID: 0}
-  explosionRadius: 5
+  explosionRadius: 8
   explosionPrefab: {fileID: 5542714111852951612, guid: 7151b87cd1b09e44faa19966e2ce2161, type: 3}
   targetLayer:
     serializedVersion: 2

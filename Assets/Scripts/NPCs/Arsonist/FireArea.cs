@@ -81,7 +81,6 @@ public class FireArea : MonoBehaviour
             if (building != null && !burningBuildings.Contains(building))
             {
                 burningBuildings.Add(building);
-                Debug.Log($"<color=orange>Fire Area: Added {unit.name}</color>");
             }
         }
     }

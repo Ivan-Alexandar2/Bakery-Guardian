@@ -15,8 +15,8 @@ public class EnemyWaveManager : MonoBehaviour
     public float safeZoneRadius = 15f;   // Don't spawn closer than this to base
 
     [Header("Difficulty Settings")]
-    public int baseBudget = 10;
-    public int pointsPerDay = 5;         // +5 points every night
+    public int baseBudget = 0;
+    public int pointsPerDay = 17;         // +5 points every night
 
     private void Start()
     {
@@ -93,7 +93,7 @@ public class EnemyWaveManager : MonoBehaviour
         foreach (UnitStats stats in enemiesToSpawn)
         {
             // Wait a random bit so they don't all appear at once
-            float waitTime = Random.Range(0.5f, 5f);
+            float waitTime = Random.Range(0.5f, 2f); // was 5f
             yield return new WaitForSeconds(waitTime);
 
             SpawnEnemy(stats);

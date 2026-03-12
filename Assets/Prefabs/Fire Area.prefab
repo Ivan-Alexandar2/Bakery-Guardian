@@ -9778,9 +9778,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49cef37cae9f154d91007c483d9f9f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireArea
-  damageAmount: 4
+  damageAmount: 3
   duration: 5
-  burnRate: 0.25
+  burnRate: 0.3
   targetLayer:
     serializedVersion: 2
     m_Bits: 384
@@ -9812,7 +9812,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.071, z: 0}
-  m_LocalScale: {x: 1, y: 0.005904657, z: 1}
+  m_LocalScale: {x: 0.88826966, y: 0.0052449275, z: 0.88826966}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8495358195410725201}

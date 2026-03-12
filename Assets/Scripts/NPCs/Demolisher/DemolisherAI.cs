@@ -13,14 +13,14 @@ public class DemolisherAI : EnemyAI
 
     public void Explode()
     {
-        Instantiate(explosionPrefab);
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
         Collider[] targets = Physics.OverlapSphere(transform.position, explosionRadius, targetLayer);
 
         foreach (Collider hit in targets)
         {
             Unit friendly = hit.GetComponent<Unit>();
-            Building building = hit.GetComponent<Building>();
+            Building building = hit.GetComponentInParent<Building>();
 
             if (friendly != null)
             {
@@ -29,8 +29,15 @@ public class DemolisherAI : EnemyAI
             if(building != null)
             {
                 building.TakeDamage(stats.damage);
+                Debug.Log("HIT BUILDING AAAAAAA");
             }
         }
         Destroy(gameObject);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }
