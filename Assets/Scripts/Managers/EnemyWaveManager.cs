@@ -16,7 +16,7 @@ public class EnemyWaveManager : MonoBehaviour
 
     [Header("Difficulty Settings")]
     public int baseBudget = 0;
-    public int pointsPerDay = 17;         // +5 points every night
+    public int pointsPerDay = 17;         // +17 points every night
 
     private void Start()
     {
@@ -35,6 +35,7 @@ public class EnemyWaveManager : MonoBehaviour
 
     void StartWave()
     {
+        pointsPerDay += 2;
         int day = DayNightManager.Instance.currentDay;
         int budget = baseBudget + (day * pointsPerDay);
 

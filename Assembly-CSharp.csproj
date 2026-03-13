@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\FireBall.cs" />
     <Compile Include="Assets\Scripts\Buildings\Building.cs" />
     <Compile Include="Assets\Scripts\NPCs\Healer\EnemyHealerAI.cs" />
+    <Compile Include="Assets\Scripts\NPCs\Tank\TankAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\SoldierAI.cs" />
     <Compile Include="Assets\Scripts\Managers\SelectionManager.cs" />
     <Compile Include="Assets\Scripts\NPCs\SummonerAI.cs" />

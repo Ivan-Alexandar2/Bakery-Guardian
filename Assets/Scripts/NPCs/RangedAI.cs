@@ -18,6 +18,6 @@ public class RangedAI : SoldierAI
         //Pass: stats.damage, sensor.targetLayer, and 20f for speed.
 
         Projectile clone = Instantiate(projectilePrefab, firePoint.position, transform.rotation);
-        clone.Setup(stats.damage, sensor.targetLayer, 20f);
+        clone.Setup(stats.damage, sensor.targetLayer, clone.speed);
     }
 }

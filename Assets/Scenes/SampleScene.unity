@@ -6015,11 +6015,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a8bed1ed22add90419d07308d5d572e3, type: 2}
   - {fileID: 11400000, guid: f5173a0c4a507e04ea193b3bddeb67a4, type: 2}
   - {fileID: 11400000, guid: 8a014a8e994c8c14b8a5483341bba01d, type: 2}
+  - {fileID: 11400000, guid: d84425cfb00e9654ca414e23ff435904, type: 2}
   mainBase: {fileID: 7421062098508659066}
   mapRadius: 500
   safeZoneRadius: 90
   baseBudget: 0
-  pointsPerDay: 17
+  pointsPerDay: 12
 --- !u!1 &887618052
 GameObject:
   m_ObjectHideFlags: 0
@@ -12329,7 +12330,7 @@ PrefabInstance:
       objectReference: {fileID: 1761423706}
     - target: {fileID: 7972734035803232924, guid: 6cc7ccfb264a2254e8813fde44c0b279, type: 3}
       propertyPath: m_VersionIndex
-      value: 2897
+      value: 2900
       objectReference: {fileID: 0}
     - target: {fileID: 8231149373739093226, guid: 6cc7ccfb264a2254e8813fde44c0b279, type: 3}
       propertyPath: m_LocalPosition.x

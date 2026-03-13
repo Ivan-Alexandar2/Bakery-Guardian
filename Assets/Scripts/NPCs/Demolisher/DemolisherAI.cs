@@ -29,7 +29,6 @@ public class DemolisherAI : EnemyAI
             if(building != null)
             {
                 building.TakeDamage(stats.damage);
-                Debug.Log("HIT BUILDING AAAAAAA");
             }
         }
         Destroy(gameObject);

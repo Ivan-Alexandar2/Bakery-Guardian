@@ -100,17 +100,20 @@ public class SoldierAI : Unit
                 }
 
                 agent.ResetPath();
-                transform.LookAt(currentTarget);
 
-                // DECISION: Use the SAME Universal Ruler
-                // Only chase if we are genuinely out of range
-                // We add a tiny buffer (+ 0.5f) to prevent micro-twitching at the edge
+                // 1. USE AIMING METHOD
+                FaceTarget();
+
                 if (GetDistanceToTarget() > stats.attackRange + 0.5f)
                 {
                     currentState = State.Chase;
                 }
 
-                if (attackCooldown <= 0) PerformAttack();
+                // 2. CHECK IF WE ARE AIMED BEFORE SHOOTING
+                if (attackCooldown <= 0 && IsAimingAtTarget())
+                {
+                    PerformAttack();
+                }
                 break;
         }
     }
@@ -168,5 +171,16 @@ public class SoldierAI : Unit
             // Dumb Math: Fallback to center
             return Vector3.Distance(transform.position, currentTarget.position);
         }
+    }
+
+    protected virtual void FaceTarget()
+    {
+        if (currentTarget != null) transform.LookAt(currentTarget);
+    }
+
+    // Virtual means standard soldiers always say "Yes", but tanks can say "No, I'm not aimed yet!"
+    protected virtual bool IsAimingAtTarget()
+    {
+        return true;
     }
 }
