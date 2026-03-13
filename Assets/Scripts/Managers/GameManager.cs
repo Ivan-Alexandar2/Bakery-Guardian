@@ -46,10 +46,10 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-       resourceInventory.Add(ResourceType.Wood, 8);
+       resourceInventory.Add(ResourceType.Wood, 80);
        resourceInventory.Add(ResourceType.Bread, 20);
-       resourceInventory.Add(ResourceType.Fish, 0);
-       resourceInventory.Add(ResourceType.Stone, 0);
+       resourceInventory.Add(ResourceType.Fish, 50);
+       resourceInventory.Add(ResourceType.Stone, 50);
        resourceInventory.Add(ResourceType.Gems, 0);
 
        uiReferences.Add(ResourceType.Wood, woodText);

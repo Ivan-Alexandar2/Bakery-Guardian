@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
   buildingPrefab: {fileID: 1720356495693314858, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
-  buildingBlueprint: {fileID: 1765390967383835381, guid: c33b214247b6d004ab281bf5d0ea0998, type: 3}
+  buildingBlueprint: {fileID: 32778634901067391, guid: 8f975e7dd2f014e44b21e06900113a6a, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
   building: {fileID: 672682504825765767, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
@@ -330,6 +330,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac73756cd46038e4c91e982088b91e23, type: 3}
+--- !u!1001 &30463072
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1720356495693314858, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
+      propertyPath: m_Name
+      value: Shieldbarer hut
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646589906341227806, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 191.00772
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646589906341227806, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.486727
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646589906341227806, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 106.67218
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646589906341227806, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646589906341227806, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646589906341227806, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646589906341227806, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646589906341227806, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646589906341227806, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646589906341227806, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2abf12056cf7a454ab4843532fe41ed5, type: 3}
 --- !u!4 &42533591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2724120122261879991, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
@@ -2738,7 +2795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3555,7 +3612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
   buildingPrefab: {fileID: 1370829243810003973, guid: f079d0f795d1bd540852ae6a2ca26c77, type: 3}
-  buildingBlueprint: {fileID: 1765390967383835381, guid: c33b214247b6d004ab281bf5d0ea0998, type: 3}
+  buildingBlueprint: {fileID: 7613030554345340098, guid: a7efabfd7f355044b93a735a392033ed, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
   building: {fileID: 2294173268111879813, guid: f079d0f795d1bd540852ae6a2ca26c77, type: 3}
@@ -3635,7 +3692,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a5b40d8517db4f843810c1ea5b561e71, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c5007f6235ad6a428cdf98b4f0d7534, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3707,7 +3764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4016,7 +4073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
   buildingPrefab: {fileID: 8593546130206745342, guid: 2fda1bdd0dd86404ab9dc46935ebda03, type: 3}
-  buildingBlueprint: {fileID: 1765390967383835381, guid: c33b214247b6d004ab281bf5d0ea0998, type: 3}
+  buildingBlueprint: {fileID: 4350478158065262578, guid: 6cf08e0cfabd8634b8ae76f7ddc5507a, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
   building: {fileID: 5340052980996982347, guid: 2fda1bdd0dd86404ab9dc46935ebda03, type: 3}
@@ -4227,7 +4284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
   buildingPrefab: {fileID: 3386524775575388077, guid: 6d6b1f8129156bc429bafbcfe1808b0a, type: 3}
-  buildingBlueprint: {fileID: 1765390967383835381, guid: c33b214247b6d004ab281bf5d0ea0998, type: 3}
+  buildingBlueprint: {fileID: 3665667705407253057, guid: ef6e0615874f6dc4a815dbe15e7bdc2a, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
   building: {fileID: 7089847687722004126, guid: 6d6b1f8129156bc429bafbcfe1808b0a, type: 3}
@@ -4621,7 +4678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5128,7 +5185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
   buildingPrefab: {fileID: 837199470361379408, guid: 71f3612602579974a954230b89edf64b, type: 3}
-  buildingBlueprint: {fileID: 1765390967383835381, guid: c33b214247b6d004ab281bf5d0ea0998, type: 3}
+  buildingBlueprint: {fileID: 4688344973807866490, guid: adba7e6852a9d804a87dc6f6874f489f, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
   building: {fileID: 1545720503827504103, guid: 71f3612602579974a954230b89edf64b, type: 3}
@@ -5356,7 +5413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
   buildingPrefab: {fileID: 3046447587767796753, guid: 4bbceb272078c2e459d80bed36a19f58, type: 3}
-  buildingBlueprint: {fileID: 1765390967383835381, guid: c33b214247b6d004ab281bf5d0ea0998, type: 3}
+  buildingBlueprint: {fileID: 6690743855169839735, guid: 56d94403d4ff63a478522d3a3afd3280, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
   building: {fileID: 2037462139523388624, guid: 4bbceb272078c2e459d80bed36a19f58, type: 3}
@@ -5434,7 +5491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2339622990261825314, guid: e8f8b1aa052144e4296f671523a5ff54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.37
+      value: -29.63
       objectReference: {fileID: 0}
     - target: {fileID: 2339622990261825314, guid: e8f8b1aa052144e4296f671523a5ff54, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5442,7 +5499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2339622990261825314, guid: e8f8b1aa052144e4296f671523a5ff54, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -46.340263
+      value: -34.41
       objectReference: {fileID: 0}
     - target: {fileID: 2339622990261825314, guid: e8f8b1aa052144e4296f671523a5ff54, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6111,7 +6168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
   buildingPrefab: {fileID: 5213633870375072767, guid: f3d6845cb99d4644f9c1227e34c7db77, type: 3}
-  buildingBlueprint: {fileID: 1765390967383835381, guid: c33b214247b6d004ab281bf5d0ea0998, type: 3}
+  buildingBlueprint: {fileID: 4782368569151153169, guid: 7f5e594053409fe49b1ba8fc2f84f253, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
   building: {fileID: 7435561437888255465, guid: f3d6845cb99d4644f9c1227e34c7db77, type: 3}
@@ -6230,7 +6287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6823,7 +6880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
   buildingPrefab: {fileID: 5096451082767633248, guid: e9951d9cb38591d4a9f419d5bbeb5fb2, type: 3}
-  buildingBlueprint: {fileID: 1765390967383835381, guid: c33b214247b6d004ab281bf5d0ea0998, type: 3}
+  buildingBlueprint: {fileID: 8359027634875768528, guid: 13aefc74168d490458bc6c272d0d1f54, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
   building: {fileID: 7575585820730735461, guid: e9951d9cb38591d4a9f419d5bbeb5fb2, type: 3}
@@ -6903,7 +6960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f01d48bafc429834da6cdf52964f542e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: baa56e37226b0a44d9785530b0d24370, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7058,7 +7115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a5b40d8517db4f843810c1ea5b561e71, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc0b31d5c0e2490428712bb6d7bd97bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7290,7 +7347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7635,7 +7692,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a5b40d8517db4f843810c1ea5b561e71, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e612a3a7d79a8742834d780c541c845, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7817,7 +7874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7876,7 +7933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
   buildingPrefab: {fileID: 9057805498737952800, guid: f0f60552c5efa60408b6a93c202ac6bf, type: 3}
-  buildingBlueprint: {fileID: 3564840298244346446, guid: 8798993b4de8a6943b5cf5e12aa99fcc, type: 3}
+  buildingBlueprint: {fileID: 8259130141786339766, guid: 4758e49524af5f748abe2b6d40fac9f8, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
   building: {fileID: 1066446815199138009, guid: f0f60552c5efa60408b6a93c202ac6bf, type: 3}
@@ -7956,7 +8013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a5b40d8517db4f843810c1ea5b561e71, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f94ca994f1fcf3f4eb873833da3b1038, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8028,7 +8085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8232,7 +8289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1270940711
 Transform:
   m_ObjectHideFlags: 0
@@ -8292,7 +8349,7 @@ GameObject:
   - component: {fileID: 1275935130}
   - component: {fileID: 1275935129}
   m_Layer: 5
-  m_Name: 2
+  m_Name: Cross Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8330,7 +8387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
   buildingPrefab: {fileID: 0}
-  buildingBlueprint: {fileID: 1765390967383835381, guid: c33b214247b6d004ab281bf5d0ea0998, type: 3}
+  buildingBlueprint: {fileID: 0}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
   building: {fileID: 0}
@@ -8690,7 +8747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8958,7 +9015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9232,7 +9289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9992,7 +10049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005508357194010510, guid: 457bb2970f0731e479eb1cc62ea890a3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10624,7 +10681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10685,7 +10742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437233414599234601, guid: cbc3bbf1001b13b4f9b6f5e45acf2282, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12042,7 +12099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildButtons
   buildingPrefab: {fileID: 8903410948171230040, guid: ac470ca4bedb92745933ec3ed2a48d7e, type: 3}
-  buildingBlueprint: {fileID: 1765390967383835381, guid: c33b214247b6d004ab281bf5d0ea0998, type: 3}
+  buildingBlueprint: {fileID: 8111101625524915614, guid: 7cd3cd684b1ccb24eae7146d4fe3d76b, type: 3}
   gameButtons: {fileID: 617235058}
   gameManager: {fileID: 887330799}
   building: {fileID: 270283390572514628, guid: ac470ca4bedb92745933ec3ed2a48d7e, type: 3}
@@ -12696,8 +12753,8 @@ MonoBehaviour:
   unitSpawnCost:
   - type: 1
     amount: 6
-  health: 150
-  maxHealth: 150
+  health: 250
+  maxHealth: 250
   costType: 0
   buildCost: 100
   maxWorkers: 3
@@ -12763,3 +12820,4 @@ SceneRoots:
   - {fileID: 2228222195319314212}
   - {fileID: 1968181474213175670}
   - {fileID: 1604202994}
+  - {fileID: 30463072}

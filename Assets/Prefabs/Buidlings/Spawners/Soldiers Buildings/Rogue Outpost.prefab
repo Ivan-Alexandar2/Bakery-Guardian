@@ -94,9 +94,10 @@ GameObject:
   - component: {fileID: 4109610627875758374}
   - component: {fileID: 1793976186979196229}
   - component: {fileID: 3115447106970952627}
+  - component: {fileID: 3603137049498067245}
   - component: {fileID: 2021366773528165679}
-  - component: {fileID: 4128772553937714274}
-  m_Layer: 0
+  - component: {fileID: 7944288270003385550}
+  m_Layer: 7
   m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,21 +630,13 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 810
+  m_VersionIndex: 816
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!33 &2021366773528165679
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823451742124804369}
-  m_Mesh: {fileID: 0}
---- !u!64 &4128772553937714274
-MeshCollider:
+--- !u!65 &3603137049498067245
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -660,10 +653,33 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
+  serializedVersion: 3
+  m_Size: {x: 22.000002, y: 14.682043, z: 24.000004}
+  m_Center: {x: 10.99994, y: 7.341013, z: 11.000001}
+--- !u!33 &2021366773528165679
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823451742124804369}
   m_Mesh: {fileID: 0}
+--- !u!208 &7944288270003385550
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823451742124804369}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 11.000001, y: 7.3410006, z: 12.000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 11.000001, y: 7.3410006, z: 11.000001}
+  m_TimeToStationary: 0.5
 --- !u!1 &5593438715495709561
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,8 +693,8 @@ GameObject:
   - component: {fileID: 7986448444781393868}
   - component: {fileID: 1105607809436120940}
   - component: {fileID: 2649791023821780390}
-  - component: {fileID: 3444710878223990216}
-  m_Layer: 0
+  - component: {fileID: 9195771198373679882}
+  m_Layer: 7
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1083,7 +1099,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4045
+  m_VersionIndex: 4051
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1169,8 +1185,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5593438715495709561}
   m_Mesh: {fileID: 0}
---- !u!64 &3444710878223990216
-MeshCollider:
+--- !u!65 &9195771198373679882
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1187,10 +1203,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 10.397295, y: 11.246953, z: 18.35554}
+  m_Center: {x: -0.000018358232, y: 1.2862735, z: 0.062268257}
 --- !u!1 &6938695768274464452
 GameObject:
   m_ObjectHideFlags: 0

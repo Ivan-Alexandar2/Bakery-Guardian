@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.3/staging' branch; Version is '6000.3.4f1 (fdd3b8998ec4) revision 16634808'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) Professional' Language: 'en' Physical Memory: 15554 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ma6ina" at "2026-03-13T20:30:37.124519Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-03-12T09:42:27Z
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ma6ina" at "2026-03-12T09:42:27.417928Z"
+Date: 2026-03-13T20:30:37Z
 
 COMMAND LINE ARGUMENTS:
 D:\Unity\6000.3.4f1\Editor\Unity.exe
@@ -13,13 +13,13 @@ D:\Unity\6000.3.4f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker2
+AssetImportWorker5
 -projectPath
 D:/Unity Repos/Rebuild TD
 -logFile
-Logs/AssetImportWorker2.log
+Logs/AssetImportWorker5.log
 -srvPort
-11659
+3300
 -licensingIpc
 LicenseClient-Ma6ina
 -job-worker-count
@@ -67,12 +67,12 @@ D:/Unity Repos/Rebuild TD
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [14108]  Target information:
+Player connection [22252]  Target information:
 
-Player connection [14108]  * "[IP] 192.168.1.2 [Port] 0 [Flags] 2 [Guid] 3687027201 [EditorId] 3687027201 [Version] 1048832 [Id] WindowsEditor(7,mashina) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [22252]  * "[IP] 192.168.1.2 [Port] 0 [Flags] 2 [Guid] 1157636989 [EditorId] 1157636989 [Version] 1048832 [Id] WindowsEditor(7,mashina) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [14108] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [14108] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [22252] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [22252] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -84,7 +84,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 5.26 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 4.11 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.4f1 (fdd3b8998ec4)
 [Subsystems] Discovering subsystems at path D:/Unity/6000.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -100,53 +100,53 @@ Initialize mono
 Mono path[0] = 'D:/Unity/6000.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/6000.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity/6000.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56388
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56164
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/6000.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001855 seconds.
+Registered in 0.002323 seconds.
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.17.4+4293ba1
-  Session Id:              9c59cd1748c84b298a469534b81d081d
-  Correlation Id:          d5fe545607578f62422e8e0bacc482d3
-  External correlation Id: 1979378844329904412
+  Session Id:              92bc86a7d1654d818dc1288af38d4a74
+  Correlation Id:          aa0dd4f1b444c4916be577f5ac072176
+  External correlation Id: 872230023862129251
   Machine Id:              I5Jc39s8kK7/A2pIWMmrTcCoON8=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Ma6ina" (connect: 0.00s, validation: 0.00s, handshake: 1.90s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ma6ina-notifications" at "2026-03-12T09:42:29.3195829Z"
-[Licensing::Module] Licensing Background thread has ended after 1.90s
-- Loaded All Assemblies, in  0.743 seconds
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Ma6ina" (connect: 0.00s, validation: 0.00s, handshake: 1.92s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Ma6ina-notifications" at "2026-03-13T20:30:39.0444028Z"
+[Licensing::Module] Licensing Background thread has ended after 1.92s
+- Loaded All Assemblies, in  0.670 seconds
 Native extension for WindowsStandalone target not found
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.671 seconds
-Domain Reload Profiling: 1413ms
-	BeginReloadAssembly (295ms)
+- Finished resetting the current domain, in  0.746 seconds
+Domain Reload Profiling: 1416ms
+	BeginReloadAssembly (233ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (56ms)
-	RebuildNativeTypeToScriptingClass (19ms)
-	initialDomainReloadingComplete (64ms)
-	LoadAllAssembliesAndSetupDomain (308ms)
-		LoadAssemblies (294ms)
+	RebuildCommonClasses (65ms)
+	RebuildNativeTypeToScriptingClass (23ms)
+	initialDomainReloadingComplete (65ms)
+	LoadAllAssembliesAndSetupDomain (284ms)
+		LoadAssemblies (232ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (304ms)
-			TypeCache.Refresh (301ms)
-				TypeCache.ScanAssembly (279ms)
+		AnalyzeDomain (279ms)
+			TypeCache.Refresh (276ms)
+				TypeCache.ScanAssembly (255ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (671ms)
+	FinalizeReload (747ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (595ms)
+		SetupLoadedEditorAssemblies (664ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (69ms)
+			InitializePlatformSupportModulesInManaged (72ms)
 			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (153ms)
-			ProcessInitializeOnLoadAttributes (238ms)
-			ProcessInitializeOnLoadMethodAttributes (128ms)
+			BeforeProcessingInitializeOnLoad (170ms)
+			ProcessInitializeOnLoadAttributes (273ms)
+			ProcessInitializeOnLoadMethodAttributes (142ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -166,8 +166,8 @@ Begin MonoManager ReloadAssembly
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
-- Loaded All Assemblies, in  1.280 seconds
-Refreshing native plugins compatible for Editor in 1.41 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.325 seconds
+Refreshing native plugins compatible for Editor in 1.56 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -178,92 +178,88 @@ Package Manager log level set to [2]
 [MODES] Loading mode Default (0) for mode-current-id-Rebuild TD
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.545 seconds
-Domain Reload Profiling: 2824ms
-	BeginReloadAssembly (322ms)
+- Finished resetting the current domain, in  1.671 seconds
+Domain Reload Profiling: 2994ms
+	BeginReloadAssembly (306ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (10ms)
+		DisableScriptedObjects (7ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (44ms)
-	RebuildCommonClasses (66ms)
-	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (55ms)
-	LoadAllAssembliesAndSetupDomain (814ms)
-		LoadAssemblies (602ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (80ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (66ms)
+	LoadAllAssembliesAndSetupDomain (848ms)
+		LoadAssemblies (601ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (418ms)
-			TypeCache.Refresh (306ms)
-				TypeCache.ScanAssembly (285ms)
-			BuildScriptInfoCaches (86ms)
-			ResolveRequiredComponents (21ms)
-	FinalizeReload (1546ms)
+		AnalyzeDomain (443ms)
+			TypeCache.Refresh (329ms)
+				TypeCache.ScanAssembly (306ms)
+			BuildScriptInfoCaches (90ms)
+			ResolveRequiredComponents (18ms)
+	FinalizeReload (1672ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1241ms)
+		SetupLoadedEditorAssemblies (1323ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (11ms)
-			BeforeProcessingInitializeOnLoad (244ms)
-			ProcessInitializeOnLoadAttributes (824ms)
-			ProcessInitializeOnLoadMethodAttributes (157ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (252ms)
+			ProcessInitializeOnLoadAttributes (878ms)
+			ProcessInitializeOnLoadMethodAttributes (178ms)
 			AfterProcessingInitializeOnLoad (3ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 1.51 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (10ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 1.40 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6683 unused Assets / (4.7 MB). Loaded Objects now: 7524.
-Memory consumption went from 155.7 MB to 151.0 MB.
-Total: 18.144200 ms (FindLiveObjects: 1.584900 ms CreateObjectMapping: 0.618300 ms MarkObjects: 12.047900 ms  DeleteObjects: 3.890600 ms)
+Unloading 6684 unused Assets / (4.3 MB). Loaded Objects now: 7525.
+Memory consumption went from 151.9 MB to 147.6 MB.
+Total: 12.500900 ms (FindLiveObjects: 0.969500 ms CreateObjectMapping: 0.834700 ms MarkObjects: 8.088400 ms  DeleteObjects: 2.607300 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7626.126076 seconds.
-  path: Assets/ScriptableObjects/Enemies/PlagueBearer.asset
-  artifactKey: Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObjects/Enemies/PlagueBearer.asset using Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a292e2cc374d151cd34840ed016f91dc') in 0.0438368 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 8554.217659 seconds.
+  path: Assets/Prefabs/Building Blueprints/Spawner Blueprints/Shieldbarer hut Blueprint.prefab
+  artifactKey: Guid(8f975e7dd2f014e44b21e06900113a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Building Blueprints/Spawner Blueprints/Shieldbarer hut Blueprint.prefab using Guid(8f975e7dd2f014e44b21e06900113a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '80b40c66d0731a7abd0e1754dad31f98') in 0.9695849 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 91
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.854536 seconds.
-  path: Assets/ScriptableObjects/Enemies/PlagueBearer.asset
-  artifactKey: Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/ScriptableObjects/Enemies/PlagueBearer.asset using Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eba8a2fb7eedd7ba3f6c483ed5453a58') in 0.2468632 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 0.997906 seconds.
+  path: Assets/Prefabs/Building Blueprints/Spawner Blueprints/Shieldbarer hut Blueprint.prefab
+  artifactKey: Guid(8f975e7dd2f014e44b21e06900113a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Building Blueprints/Spawner Blueprints/Shieldbarer hut Blueprint.prefab using Guid(8f975e7dd2f014e44b21e06900113a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aca74e5679813939b2ace6ac2ce2fea7') in 0.0208036 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 42
 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.880793 seconds.
-  path: Assets/ScriptableObjects/Enemies/PlagueBarer.asset
-  artifactKey: Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObjects/Enemies/PlagueBarer.asset using Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0c78994b9b2caaf0eb330e36a7ca5682') in 0.002532 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 0.802879 seconds.
+  path: Assets/Prefabs/Building Blueprints/Spawner Blueprints/Soldier Building Blueprint.prefab
+  artifactKey: Guid(6cf08e0cfabd8634b8ae76f7ddc5507a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/Building Blueprints/Spawner Blueprints/Soldier Building Blueprint.prefab using Guid(6cf08e0cfabd8634b8ae76f7ddc5507a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '09eb055448d3c136c74e8f1d2f1b041f') in 0.1293113 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 17
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.928308 seconds.
-  path: Assets/ScriptableObjects/Enemies/PlagueBarer.asset
-  artifactKey: Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/ScriptableObjects/Enemies/PlagueBarer.asset using Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0ea08b3ad53ad0fdfbbb357a7f53d2b7') in 0.0300728 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 17.923335 seconds.
+  path: Assets/Prefabs/Building Blueprints/Spawner Blueprints/Rogue Outpost Blueprint.prefab
+  artifactKey: Guid(adba7e6852a9d804a87dc6f6874f489f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Building Blueprints/Spawner Blueprints/Rogue Outpost Blueprint.prefab using Guid(adba7e6852a9d804a87dc6f6874f489f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '139c7498e7c4f03d435d59b59cfd561c') in 0.0898053 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
 
 ========================================================================
 Received Import Request.
-  Time since last request: 51.696134 seconds.
-  path: Assets/ScriptableObjects/Enemies/PlagueBarer.asset
-  artifactKey: Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ScriptableObjects/Enemies/PlagueBarer.asset using Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '650a60a8cd57e4bbfd2da2f69463d3c4') in 0.0033219 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 0.760343 seconds.
+  path: Assets/Prefabs/Building Blueprints/Spawner Blueprints/Fort Blueprint.prefab
+  artifactKey: Guid(56d94403d4ff63a478522d3a3afd3280) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Prefabs/Building Blueprints/Spawner Blueprints/Fort Blueprint.prefab using Guid(56d94403d4ff63a478522d3a3afd3280) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '386af87c4943cb992e93df6daa8a4b9c') in 0.0274426 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 17
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.887556 seconds.
-  path: Assets/ScriptableObjects/Enemies/PlagueBarer.asset
-  artifactKey: Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/ScriptableObjects/Enemies/PlagueBarer.asset using Guid(cc11897aaa89c5e45a065fe194b4c554) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4292ea06cbc50e9ca595636dfc0879c0') in 0.0258515 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

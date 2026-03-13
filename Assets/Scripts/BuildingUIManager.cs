@@ -10,7 +10,6 @@ public class BuildingUIManager : MonoBehaviour
     public TextMeshProUGUI spawnCostText;
     public Button spawnButton;
     public Image buildingSprite;
-    //public Image[] resourceSprites;
 
     [Header("Spawning UI")]
     public Slider spawnProgressBar;
@@ -27,11 +26,13 @@ public class BuildingUIManager : MonoBehaviour
     {
         // 1. Optimization: Only update if the menu is actually open!
         if (menuPanel.activeSelf == false) return;
+        if (currentBuilding == null) menuPanel.SetActive(false);
 
         // 2. Update Health Slider
         if (currentBuilding != null)
         {
             healthSlider.value = currentBuilding.health;
+            healthText.text = currentBuilding.health.ToString();
 
             // Update Button Interaction (Grey out if full)
             if (currentSpawner != null)
