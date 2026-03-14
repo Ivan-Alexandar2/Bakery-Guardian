@@ -137,7 +137,7 @@ public class HealerAI : SoldierAI
         {
             // You need to add a Heal() method to Unit.cs!
             patient.Heal(healAmount);
-
+            patient.CurePlague();
             // Visual Effect
             Debug.Log("<color=green>Healing + " + healAmount + "</color>");
 

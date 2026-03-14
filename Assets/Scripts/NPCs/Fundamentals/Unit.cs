@@ -21,6 +21,16 @@ public class Unit : MonoBehaviour
     public HealthBar healthBarPrefab; // Drag the Prefab here
     [SerializeField] private HealthBar myHealthBar;
 
+    [Header("Status Effects")]
+    public bool isPlagued = false;
+    private float plagueDamage = 2f;
+    private float plagueTickRate = 1f;
+    private float plagueTimer = 0f;
+
+    // Visuals
+    private Renderer[] myRenderers;     // Array in case the model has multiple parts
+    private Color[] originalColors;     // To remember what color they used to be
+
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -52,6 +62,32 @@ public class Unit : MonoBehaviour
 
             myHealthBar.Setup(transform, stats.maxHealth, teamColor);
         }
+
+        // Grab all renderers in this object and its children
+        myRenderers = GetComponentsInChildren<Renderer>();
+        originalColors = new Color[myRenderers.Length];
+
+        // Save their default colors so we can revert back later
+        for (int i = 0; i < myRenderers.Length; i++)
+        {
+            if (myRenderers[i].material.HasProperty("_Color"))
+            {
+                originalColors[i] = myRenderers[i].material.color;
+            }
+        }
+    }
+
+    protected virtual void Update()
+    {
+        if (isPlagued)
+        {
+            plagueTimer -= Time.deltaTime;
+            if (plagueTimer <= 0)
+            {
+                TakeDamage(plagueDamage);
+                plagueTimer = plagueTickRate;
+            }
+        }
     }
 
     public virtual void TakeDamage(float amount)
@@ -72,6 +108,41 @@ public class Unit : MonoBehaviour
         if (currentHealth > stats.maxHealth) currentHealth = stats.maxHealth;
 
         if (myHealthBar != null) myHealthBar.UpdateHealth(currentHealth, stats.maxHealth);
+    }
+
+    public void Infect(float damageAmount)
+    {
+        if (isPlagued) return; // Don't infect twice
+
+        isPlagued = true;
+        plagueDamage = damageAmount;
+        plagueTimer = plagueTickRate; // Trigger first tick immediately
+
+        // Turn them sickly green
+        for (int i = 0; i < myRenderers.Length; i++)
+        {
+            if (myRenderers[i].material.HasProperty("_Color"))
+            {
+                // Blend their original color with bright green
+                myRenderers[i].material.color = Color.Lerp(originalColors[i], Color.green, 0.5f);
+            }
+        }
+    }
+
+    public void CurePlague()
+    {
+        if (!isPlagued) return;
+
+        isPlagued = false;
+
+        // Revert to original color
+        for (int i = 0; i < myRenderers.Length; i++)
+        {
+            if (myRenderers[i].material.HasProperty("_Color"))
+            {
+                myRenderers[i].material.color = originalColors[i];
+            }
+        }
     }
 
     protected virtual void Die()

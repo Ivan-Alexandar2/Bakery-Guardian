@@ -37,6 +37,7 @@ public class SoldierAI : Unit
 
     protected virtual void Update()
     {
+        base.Update();
         // 1. Update Cooldowns
         if (attackCooldown > 0) attackCooldown -= Time.deltaTime;
 

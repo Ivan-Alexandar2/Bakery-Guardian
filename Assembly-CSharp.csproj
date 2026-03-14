@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\NPCs\Healer\HealingSphere.cs" />
     <Compile Include="Assets\Scripts\Managers\DayNightManager.cs" />
     <Compile Include="Assets\Scripts\Managers\EnemyWaveManager.cs" />
+    <Compile Include="Assets\Scripts\NPCs\PlaguebearerAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\Healer\HealerSensor.cs" />
     <Compile Include="Assets\Scripts\GameButtons.cs" />
     <Compile Include="Assets\Scripts\NPCs\Arsonist\ArsonistAI.cs" />
