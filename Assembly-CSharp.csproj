@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\NPCs\Fundamentals\UnitStats.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\NPCs\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\Buildings\HolyCrossAI.cs" />
     <Compile Include="Assets\Scripts\UnitSpawner.cs" />
     <Compile Include="Assets\Scripts\NPCs\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\Demolisher\DemolisherAI.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Scripts\NPCs\PlaguebearerAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\Healer\HealerSensor.cs" />
     <Compile Include="Assets\Scripts\GameButtons.cs" />
+    <Compile Include="Assets\Scripts\NPCs\NecromancerAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\Arsonist\ArsonistAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\Healer\HealingArea.cs" />
     <Compile Include="Assets\Scripts\NPCs\Fundamentals\Unit.cs" />

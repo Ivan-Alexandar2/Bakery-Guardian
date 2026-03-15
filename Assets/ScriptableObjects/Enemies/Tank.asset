@@ -17,12 +17,12 @@ MonoBehaviour:
   maxHealth: 1250
   moveSpeed: 2.5
   damage: 100
-  attackRange: 37
+  attackRange: 35
   attackSpeed: 8
   resourceCapacity: 0
   harvestTime: 0
-  spawnCost: 30
-  minDayToSpawn: 8
+  spawnCost: 40
+  minDayToSpawn: 9
   enemyPrefab: {fileID: 5091257411223020488, guid: 730eac1cd492d214592f2590a349e679, type: 3}
   gemDropChance: 100
   gemAmount: 3

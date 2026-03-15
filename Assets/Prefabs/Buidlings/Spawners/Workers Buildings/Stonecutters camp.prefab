@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5679530763351552621}
   - component: {fileID: 301862919997648096}
   - component: {fileID: 3907433213888142078}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stone lmao 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 8562010723574449511}
   - component: {fileID: 2294173268111879813}
   - component: {fileID: 5713965948559108082}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stonecutters camp
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 1939384415291097909}
   - component: {fileID: 8178961978665932947}
   - component: {fileID: 2590038902497646216}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stone lmao 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 2472293745948961406}
   - component: {fileID: 84714889470484730}
   - component: {fileID: 7409656082289676940}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stone lmao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 263713945947817028}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spawnpoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 4233083352631001852}
   - component: {fileID: 2161388907772984196}
   - component: {fileID: 6359933882615204093}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stone lmao 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

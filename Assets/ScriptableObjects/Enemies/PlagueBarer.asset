@@ -24,5 +24,5 @@ MonoBehaviour:
   spawnCost: 5
   minDayToSpawn: 7
   enemyPrefab: {fileID: 5103167651062168426, guid: cb15aa1202de30b4ba11217b91b1b9b3, type: 3}
-  gemDropChance: 100
+  gemDropChance: 60
   gemAmount: 1

@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
   unitName: Archer
   unitType: 1
-  maxHealth: 60
-  moveSpeed: 3
-  damage: 15
-  attackRange: 15
-  attackSpeed: 3.5
+  maxHealth: 70
+  moveSpeed: 3.5
+  damage: 17
+  attackRange: 17
+  attackSpeed: 3
   resourceCapacity: 0
   harvestTime: 0
-  spawnCost: 5
-  minDayToSpawn: 1
+  spawnCost: 0
+  minDayToSpawn: 0
   enemyPrefab: {fileID: 0}
   gemDropChance: 0
   gemAmount: 1

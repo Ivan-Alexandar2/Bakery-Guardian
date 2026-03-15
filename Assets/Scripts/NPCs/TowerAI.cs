@@ -16,7 +16,7 @@ public class TowerAI : MonoBehaviour
     private Transform currentTarget;
     private float attackCooldown;
 
-    void Update()
+    protected virtual void Update()
     {
         // ---------------------------------------------------------
         // YOUR CODE GOES HERE
