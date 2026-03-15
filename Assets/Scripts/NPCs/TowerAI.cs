@@ -13,8 +13,8 @@ public class TowerAI : MonoBehaviour
     public float fireRate = 2f;
     public float projectileSpeed = 30f;
 
-    private Transform currentTarget;
-    private float attackCooldown;
+    protected Transform currentTarget;
+    protected float attackCooldown;
 
     protected virtual void Update()
     {
