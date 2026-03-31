@@ -38,10 +38,12 @@ public class Molotov : Projectile
     private void OnCollisionEnter(Collision collision) // Collision and not trigger for testing the molly dropping only on the ground
     {                                                  // and not trigger on units
         if (hasDeployed) return;
-
-        hasDeployed = true;
-        DeployFireArea();
-        Destroy(gameObject);
+        if(collision.transform.CompareTag("Ground"))
+        {
+            hasDeployed = true;
+            DeployFireArea();
+            Destroy(gameObject);
+        }     
     }
 
     void DeployFireArea()

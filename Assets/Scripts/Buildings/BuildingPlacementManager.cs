@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BuildingPlacementManager : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class BuildingPlacementManager : MonoBehaviour
                 {
                     if (FindObjectOfType<GameManager>().TryBuyBuilding(cost))
                     {
-                        Instantiate(prefabToBuild, hit.point, Quaternion.identity);
+                        Instantiate(prefabToBuild, hit.point, currentBlueprint.transform.rotation); // Quaternion.identity
                         Destroy(currentBlueprint);
                         currentBlueprint = null;
                     }
@@ -43,6 +44,10 @@ public class BuildingPlacementManager : MonoBehaviour
             {
                 Destroy(currentBlueprint);
                 currentBlueprint = null;
+            }
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                currentBlueprint.transform.Rotate(0f, 90f, 0f, Space.Self);
             }
         }
     }

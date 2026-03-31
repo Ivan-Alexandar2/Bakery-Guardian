@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8572895637191093500}
   - component: {fileID: 2850532477333393415}
   - component: {fileID: 5383276997551299278}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Fuse lmao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 3932297497986350002}
   - component: {fileID: 7090398624769476910}
   - component: {fileID: 3883843411521240484}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bomb lmao
   m_TagString: Untagged
   m_Icon: {fileID: 0}

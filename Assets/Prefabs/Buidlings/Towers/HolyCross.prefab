@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5254487637383393400}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 734877012179462102}
   - component: {fileID: 8651035208143286219}
   - component: {fileID: 6060797654183045656}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Part2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10141,7 +10141,7 @@ GameObject:
   - component: {fileID: 1275049643552988408}
   - component: {fileID: 2486373292914908588}
   - component: {fileID: 4111352587521585056}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Gem1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10441,7 +10441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3100c720a60be47916dabb2703bab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HolyCrossAI
-  damagePerTick: 6
+  damagePerTick: 4
   tickRate: 0.1
   sensor: {fileID: 3013889944571652063}
   firePoint: {fileID: 5254487637383393400}
@@ -10492,7 +10492,7 @@ GameObject:
   - component: {fileID: 7456482255992008998}
   - component: {fileID: 3379479108390092359}
   - component: {fileID: 4017522671375875402}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Gem2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\NPCs\Arsonist\FireArea.cs" />
     <Compile Include="Assets\Scripts\NPCs\Fundamentals\Projectile.cs" />
     <Compile Include="Assets\Scripts\BuildingUIManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\TooltipTrigger.cs" />
     <Compile Include="Assets\Scripts\Buildings\MortarAI.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\NPCs\Healer\HealerAI.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Assets\Scripts\NPCs\Tank\TankAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\SoldierAI.cs" />
     <Compile Include="Assets\Scripts\Managers\SelectionManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\TooltipManager.cs" />
     <Compile Include="Assets\Scripts\NPCs\SummonerAI.cs" />
     <Compile Include="Assets\Scripts\Buildings\ResourceDepot.cs" />
     <Compile Include="Assets\Scripts\NPCs\EnemyRangedAI.cs" />

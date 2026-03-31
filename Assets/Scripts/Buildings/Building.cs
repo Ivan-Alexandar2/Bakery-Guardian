@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static Unity.VisualScripting.Dependencies.Sqlite.SQLite3;
 
 public class Building : MonoBehaviour
 {
@@ -18,6 +17,10 @@ public class Building : MonoBehaviour
     [Header("Worker Management")]
     public int maxWorkers = 3;
     public List<WorkerAI> currentWorkers = new List<WorkerAI>();
+
+    [Header("Tooltip Info")]
+    public string buildingDisplayName; // e.g., "Barracks"
+    public string spawnDescription;    // e.g., "Spawns: Melee Soldiers"
 
     public float timeForNPCSpawn;
     public Sprite icon;
