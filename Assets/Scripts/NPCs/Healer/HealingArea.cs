@@ -62,7 +62,7 @@ public class HealingArea : MonoBehaviour
             if (unit != null && !patients.Contains(unit))
             {
                 patients.Add(unit);
-                Debug.Log($"<color=green>Healing Area: Added {unit.name}</color>");
+                //Debug.Log($"<color=green>Healing Area: Added {unit.name}</color>");
             }
         }
     }

@@ -432,6 +432,8 @@ MonoBehaviour:
   buildCost: 100
   maxWorkers: 3
   currentWorkers: []
+  buildingDisplayName: Hospital
+  spawnDescription: Spawns medics that heal and cure allies
   timeForNPCSpawn: 15
   icon: {fileID: 21300000, guid: f94ca994f1fcf3f4eb873833da3b1038, type: 3}
   jobType: Hospital

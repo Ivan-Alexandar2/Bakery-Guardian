@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TooltipManager : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class TooltipManager : MonoBehaviour
         descriptionText.text = buildingData.spawnDescription;
 
         // 2. Dynamic Cost Reading
-        costText.text = "Cost:\n";
+        costText.text = "Cost:";
 
         foreach (ResourceCost cost in buildingData.buildingCost)
         {

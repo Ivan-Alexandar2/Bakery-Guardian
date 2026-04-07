@@ -61,6 +61,7 @@
     <Analyzer Include="D:\Unity\6000.3.4f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\NPCs\WorkerProgressBar.cs" />
     <Compile Include="Assets\Scripts\Buildings\Blueprint.cs" />
     <Compile Include="Assets\Scripts\NPCs\WorkerAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\TowerAI.cs" />

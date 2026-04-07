@@ -23,6 +23,10 @@ public class WorkerAI : Unit
     private float patrolTimer;
     private bool isPatrollingBase = false;
 
+    [Header("Harvesting UI")]
+    public WorkerProgressBar progressBarPrefab;
+    private WorkerProgressBar myProgressBar;
+
 
     [Header("Debug")]
     [SerializeField] private WorkerState currentState;
@@ -45,13 +49,21 @@ public class WorkerAI : Unit
         {
             myJobType = myWorkplace.jobType;
         }
+
+        if (progressBarPrefab != null)
+        {
+            myProgressBar = Instantiate(progressBarPrefab, transform.position, Quaternion.identity);
+            myProgressBar.Setup(transform);
+        }
     }
 
     // Don't forget OnDestroy or the game errors when you reload scenes!
     private void OnDestroy()
     {
         DayNightManager.Instance.OnNightStart -= HandleNightfall;
-        DayNightManager.Instance.OnDayStart -= HandleSunrise;  
+        DayNightManager.Instance.OnDayStart -= HandleSunrise;
+
+        if (myProgressBar != null) Destroy(myProgressBar.gameObject);
     }
 
     void Update()
@@ -65,6 +77,9 @@ public class WorkerAI : Unit
                 case WorkerState.Gathering:
                     harvestTimer += Time.deltaTime;
                     transform.LookAt(myWorkplace.transform);
+                    myProgressBar.gameObject.SetActive(true);
+                    if (myProgressBar != null) myProgressBar.UpdateProgress(harvestTimer, stats.harvestTime);
+
                     if (harvestTimer >= stats.harvestTime)
                     {
                         harvestTimer = 0;
@@ -76,6 +91,11 @@ public class WorkerAI : Unit
                             currentState = WorkerState.Delivering;
                             // Tell NavMesh to move immediately
                             agent.SetDestination(myDepot.transform.position);
+                            if (myProgressBar != null) myProgressBar.SetFullState(true);
+                        }
+                        else
+                        {
+                            if (myProgressBar != null) myProgressBar.UpdateProgress(0f, stats.harvestTime);
                         }
                     }
                     break;
@@ -87,6 +107,8 @@ public class WorkerAI : Unit
                         // We arrived at Depot!
                         myDepot.DepositResources(currentLoad, resourceToGather);
                         currentLoad = 0; // Empty backpack
+
+                        if (myProgressBar != null) myProgressBar.SetFullState(false);
 
                         // NIGHT CHECK: If it turned night while walking here, HIDE NOW.
                         if (DayNightManager.Instance.isNight)
@@ -117,7 +139,8 @@ public class WorkerAI : Unit
                         // Hide logic
                         // TODO: Add to building's "Hidden List" here later
                         gameObject.SetActive(false);
-                    }
+                        if (myProgressBar != null) myProgressBar.gameObject.SetActive(false);
+                    }                   
                     break;
             }
         }  

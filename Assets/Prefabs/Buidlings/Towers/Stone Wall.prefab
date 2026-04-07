@@ -55,6 +55,8 @@ MonoBehaviour:
   buildCost: 100
   maxWorkers: 0
   currentWorkers: []
+  buildingDisplayName: Stone wall
+  spawnDescription: A tough building used only for protection
   timeForNPCSpawn: 0
   icon: {fileID: 21300000, guid: 5b1962ef03799a843898a69013526351, type: 3}
   jobType: 

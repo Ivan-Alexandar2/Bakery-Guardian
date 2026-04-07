@@ -5239,6 +5239,8 @@ MonoBehaviour:
   buildCost: 100
   maxWorkers: 3
   currentWorkers: []
+  buildingDisplayName: Bonfire
+  spawnDescription: A building that constantly emits damaging area around it
   timeForNPCSpawn: 0
   icon: {fileID: 21300000, guid: 3f90a6f728d81fb45b61f6e21767ed42, type: 3}
   jobType: 

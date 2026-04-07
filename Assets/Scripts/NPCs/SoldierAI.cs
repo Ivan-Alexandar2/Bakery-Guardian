@@ -12,6 +12,7 @@ public class SoldierAI : Unit
     public Transform guardPoint; // Assign their Home Building (or a specific flag)
     public float patrolRadius = 10f;
     public float patrolWaitTime = 3f;
+    private float pathUpdateTimer = 0f; // Stops the NavMesh from crashing
 
     [Header("Debug")]
     [SerializeField] protected State currentState;
@@ -38,10 +39,9 @@ public class SoldierAI : Unit
     protected virtual void Update()
     {
         base.Update();
-        // 1. Update Cooldowns
+
         if (attackCooldown > 0) attackCooldown -= Time.deltaTime;
 
-        // 2. Always look for a target if we don't have one
         if (currentTarget == null)
         {
             currentTarget = sensor.GetTarget();
@@ -49,7 +49,9 @@ public class SoldierAI : Unit
             else currentState = State.Patrol;
         }
 
-        // 3. State Machine
+        // If we are falling from the sky or dead, don't do any NavMesh math!
+        if (!agent.isOnNavMesh) return;
+
         switch (currentState)
         {
             case State.Patrol:
@@ -62,30 +64,30 @@ public class SoldierAI : Unit
                         patrolTimer = 0;
                     }
                 }
-
                 if (currentTarget != null) currentState = State.Chase;
                 break;
 
             case State.Chase:
                 if (currentTarget == null) { currentState = State.Patrol; break; }
 
-                // --- NEW: THE LEASH (GIVE UP LOGIC) ---
                 float distToTarget = Vector3.Distance(transform.position, currentTarget.position);
 
-                // If the target ran too far away (e.g., 20 meters), give up.
-                // Or if WE ran too far from our guard post (e.g., 30 meters).
                 if (distToTarget > sensor.detectionRange * 1.5f)
                 {
-                    Debug.Log("Target escaped! Returning to post.");
                     currentTarget = null;
                     agent.ResetPath();
-                    currentState = State.Patrol; // Or ReturnToGuardPoint
+                    currentState = State.Patrol;
                     break;
                 }
 
-                agent.SetDestination(currentTarget.position);
+                pathUpdateTimer -= Time.deltaTime;
+                if (pathUpdateTimer <= 0f)
+                {
+                    // Only ask for a path 5 times a second instead of 60!
+                    agent.SetDestination(currentTarget.position);
+                    pathUpdateTimer = 0.2f;
+                }
 
-                // (Your existing attack range check here...)
                 if (GetDistanceToTarget() <= stats.attackRange)
                 {
                     currentState = State.Attack;
@@ -101,8 +103,6 @@ public class SoldierAI : Unit
                 }
 
                 agent.ResetPath();
-
-                // 1. USE AIMING METHOD
                 FaceTarget();
 
                 if (GetDistanceToTarget() > stats.attackRange + 0.5f)
@@ -110,7 +110,6 @@ public class SoldierAI : Unit
                     currentState = State.Chase;
                 }
 
-                // 2. CHECK IF WE ARE AIMED BEFORE SHOOTING
                 if (attackCooldown <= 0 && IsAimingAtTarget())
                 {
                     PerformAttack();

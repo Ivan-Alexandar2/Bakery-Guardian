@@ -1134,6 +1134,8 @@ MonoBehaviour:
   buildCost: 100
   maxWorkers: 3
   currentWorkers: []
+  buildingDisplayName: Summoners prism
+  spawnDescription: Spawns Summoners that summon minions and do AOE attacks
   timeForNPCSpawn: 25
   icon: {fileID: 21300000, guid: 550ece9a8b739bd45bf40df4f81c40f4, type: 3}
   jobType: 

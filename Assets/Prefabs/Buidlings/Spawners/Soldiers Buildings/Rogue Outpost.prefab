@@ -63,6 +63,8 @@ MonoBehaviour:
   buildCost: 100
   maxWorkers: 10
   currentWorkers: []
+  buildingDisplayName: Rogue outpost
+  spawnDescription: Spawns rogues that enemy target backliner
   timeForNPCSpawn: 3
   icon: {fileID: 21300000, guid: b2fca1012c1688f4689b41df862a2c45, type: 3}
   jobType: 

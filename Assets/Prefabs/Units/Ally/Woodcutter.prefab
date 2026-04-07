@@ -155,6 +155,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 32c4f236f5f24084fb104c2dc051d877, type: 2}
   healthBarPrefab: {fileID: 8096992175296828625, guid: ca2e5463cefbce6428302a85d8ab08d0, type: 3}
   myHealthBar: {fileID: 0}
+  isPlagued: 0
   myWorkplace: {fileID: 0}
   myDepot: {fileID: 0}
   resourceToGather: 0
@@ -163,6 +164,7 @@ MonoBehaviour:
   searchInterval: 1
   patrolRadius: 16
   patrolWaitTime: 3
+  progressBarPrefab: {fileID: 1506802445977188182, guid: d5af52cd17a28124e9431551d4c9b703, type: 3}
   currentState: 0
   currentLoad: 0
   harvestTimer: 0

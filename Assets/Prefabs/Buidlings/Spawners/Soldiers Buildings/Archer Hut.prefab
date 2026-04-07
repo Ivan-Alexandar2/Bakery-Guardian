@@ -204,6 +204,8 @@ MonoBehaviour:
   buildCost: 100
   maxWorkers: 5
   currentWorkers: []
+  buildingDisplayName: Archer hut
+  spawnDescription: Spawns archers that shoot from afar
   timeForNPCSpawn: 15
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   jobType: 

@@ -173,6 +173,8 @@ MonoBehaviour:
   buildCost: 100
   maxWorkers: 3
   currentWorkers: []
+  buildingDisplayName: Shieldbearer hut
+  spawnDescription: 'Spawns shieldbearers that are tough, but slow '
   timeForNPCSpawn: 8
   icon: {fileID: 21300000, guid: f01d48bafc429834da6cdf52964f542e, type: 3}
   jobType: 

@@ -164,6 +164,7 @@ MonoBehaviour:
   searchInterval: 1
   patrolRadius: 16
   patrolWaitTime: 3
+  progressBarPrefab: {fileID: 1506802445977188182, guid: d5af52cd17a28124e9431551d4c9b703, type: 3}
   currentState: 0
   currentLoad: 0
   harvestTimer: 0
