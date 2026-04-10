@@ -50,8 +50,16 @@ public class Building : MonoBehaviour
         }
 
         // 2. Logic: Eject workers (The "Refugee" logic we discussed)
-        // (We will add this later)
+        foreach (WorkerAI worker in currentWorkers)
+        {
+            if (worker != null)
+            {
+                // Call our new dedicated wake-up method!
+                worker.EvictFromBuilding();
+            }
+        }
 
+        currentWorkers.Clear();
         // 3. Destroy
         Destroy(gameObject);
     }
@@ -93,6 +101,8 @@ public class Building : MonoBehaviour
         {
             spawner.AdoptUnit(worker.gameObject);
         }
+
+        AddWorker(worker);
     }
 
     public void AddWorker(WorkerAI worker)

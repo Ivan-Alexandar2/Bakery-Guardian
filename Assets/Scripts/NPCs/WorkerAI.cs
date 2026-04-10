@@ -7,7 +7,7 @@ public class WorkerAI : Unit
     [Header("Assignments")]
     public Building myWorkplace;
     public ResourceDepot myDepot;
-    public ResourceType resourceToGather = ResourceType.Bread; // What does this worker make?
+    public ResourceType resourceToGather = ResourceType.Bread;
     public string myJobType;
 
     [Header("Refugee Settings")]
@@ -27,11 +27,11 @@ public class WorkerAI : Unit
     public WorkerProgressBar progressBarPrefab;
     private WorkerProgressBar myProgressBar;
 
-
     [Header("Debug")]
     [SerializeField] private WorkerState currentState;
     [SerializeField] private int currentLoad = 0;
     [SerializeField] private float harvestTimer = 0;
+    private float pathUpdateTimer = 0f;
 
     protected override void Start()
     {
@@ -48,6 +48,7 @@ public class WorkerAI : Unit
         if (myWorkplace != null)
         {
             myJobType = myWorkplace.jobType;
+            myWorkplace.AddWorker(this);
         }
 
         if (progressBarPrefab != null)
@@ -68,6 +69,8 @@ public class WorkerAI : Unit
 
     void Update()
     {
+        if (!agent.isOnNavMesh) return;
+        if (pathUpdateTimer > 0) pathUpdateTimer -= Time.deltaTime;
         if (myWorkplace == null) RefugeeLogic();
 
         else
@@ -206,7 +209,7 @@ public class WorkerAI : Unit
         else
         {
             // 3. NO JOB, NO ENEMIES -> Patrol around the Base
-            // (This prevents them from standing still in the woods)
+            // (This prevents them from standing still)
             GameObject baseObj = GameObject.FindGameObjectWithTag("MainBase");
             if (baseObj != null)
             {
@@ -253,19 +256,31 @@ public class WorkerAI : Unit
             combatCooldown -= Time.deltaTime;
             if (combatCooldown <= 0)
             {
-                // USE YOUR SCRIPTABLE OBJECT STATS HERE!
                 combatTarget.TakeDamage(stats.damage);
                 combatCooldown = stats.attackSpeed;
 
-                // Animation trigger if you have one
+                // Animation trigger for future
                 // anim.SetTrigger("Attack"); 
             }
         }
         else
         {
-            // Chase
-            agent.SetDestination(combatTarget.transform.position);
+            if (pathUpdateTimer <= 0)
+            {
+                agent.SetDestination(combatTarget.transform.position);
+                pathUpdateTimer = 0.2f; // Only ask for a path 5 times a second
+            }
             isPatrollingBase = false;
         }
+    }
+
+    // If a building gets destroyed and its night time
+    public void EvictFromBuilding()
+    {
+        gameObject.SetActive(true);
+        myWorkplace = null;
+
+        currentState = WorkerState.Returning;
+        if (myProgressBar != null) myProgressBar.gameObject.SetActive(true);
     }
 }

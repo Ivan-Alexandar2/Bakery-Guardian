@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\NPCs\WorkerProgressBar.cs" />
-    <Compile Include="Assets\Scripts\Buildings\Blueprint.cs" />
     <Compile Include="Assets\Scripts\NPCs\WorkerAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\TowerAI.cs" />
     <Compile Include="Assets\Scripts\NPCs\Fundamentals\UnitStats.cs" />
@@ -96,6 +95,7 @@
     <Compile Include="Assets\Scripts\NPCs\Fundamentals\AggroSensor.cs" />
     <Compile Include="Assets\Scripts\NPCs\Demolisher\Explosion.cs" />
     <Compile Include="Assets\Scripts\NPCs\Arsonist\Molotov.cs" />
+    <Compile Include="Assets\Scripts\Buildings\UpgradeBuilding.cs" />
     <Compile Include="Assets\Scripts\FireBall.cs" />
     <Compile Include="Assets\Scripts\Buildings\Building.cs" />
     <Compile Include="Assets\Scripts\NPCs\Healer\EnemyHealerAI.cs" />

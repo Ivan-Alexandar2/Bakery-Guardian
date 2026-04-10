@@ -19,8 +19,12 @@ public class BuildingUIManager : MonoBehaviour
     public Slider healthSlider;        // Drag the new Health Slider here
     public GameObject spawnToolsGroup;
 
+    [Header("Upgrade UI")]
+    public GameObject upgradePanel;
+
     private Building currentBuilding;  // We need to keep track of the building for HP updates 
     private UnitSpawner currentSpawner;
+    private UpgradeBuilding currentUpgradeBuilding;
 
     void Update()
     {
@@ -102,6 +106,17 @@ public class BuildingUIManager : MonoBehaviour
         {
             spawnToolsGroup.SetActive(false);
             spawnButton.interactable = false;
+        }
+
+        currentUpgradeBuilding = buildingData.GetComponent<UpgradeBuilding>();
+
+        if(currentUpgradeBuilding != null)
+        {
+            upgradePanel.SetActive(true);
+        }
+        else
+        {
+            upgradePanel.SetActive(false);
         }
     }
 
