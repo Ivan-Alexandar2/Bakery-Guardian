@@ -46,10 +46,10 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-       resourceInventory.Add(ResourceType.Wood, 80);
+       resourceInventory.Add(ResourceType.Wood, 10);
        resourceInventory.Add(ResourceType.Bread, 20);
-       resourceInventory.Add(ResourceType.Fish, 50);
-       resourceInventory.Add(ResourceType.Stone, 50);
+       resourceInventory.Add(ResourceType.Fish, 0);
+       resourceInventory.Add(ResourceType.Stone, 0);
        resourceInventory.Add(ResourceType.Gems, 0);
 
        uiReferences.Add(ResourceType.Wood, woodText);
@@ -122,6 +122,26 @@ public class GameManager : MonoBehaviour
         }
 
         foreach (ResourceCost cost in unitCost)
+        {
+            resourceInventory[cost.type] -= cost.amount;
+        }
+
+        UpdateUI();
+        return true;
+    }
+
+    public bool TryBuyUpgrade(List<ResourceCost> upgradeCost)
+    {
+        foreach (ResourceCost cost in upgradeCost)
+        {
+            if (resourceInventory[cost.type] < cost.amount)
+            {
+                Debug.Log("Not enough gems");
+                return false;
+            }
+        }
+
+        foreach (ResourceCost cost in upgradeCost)
         {
             resourceInventory[cost.type] -= cost.amount;
         }

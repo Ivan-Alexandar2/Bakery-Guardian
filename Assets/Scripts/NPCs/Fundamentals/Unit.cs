@@ -18,7 +18,7 @@ public class Unit : MonoBehaviour
     public Action OnDeath;
 
     [Header("UI")]
-    public HealthBar healthBarPrefab; // Drag the Prefab here
+    public HealthBar healthBarPrefab;
     [SerializeField] private HealthBar myHealthBar;
 
     [Header("Status Effects")]

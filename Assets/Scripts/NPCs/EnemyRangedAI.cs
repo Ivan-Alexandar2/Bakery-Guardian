@@ -1,14 +1,15 @@
 using UnityEngine;
 
-public class EnemyRangedAI : RangedAI // Inherits Shooting & Soldier logic
+public class EnemyRangedAI : RangedAI
 {
     [Header("Aim Settings")]
-    public float turnSpeed = 2f; // Heavy/slow turning
+    public float turnSpeed = 2f;
     public float aimTolerance = 5f;
 
     protected override void Start()
     {
         base.Start();
+        agent.updateRotation = false;
 
         GameObject baseObj = GameObject.FindGameObjectWithTag("MainBase");
         if (baseObj != null) guardPoint = baseObj.transform;
@@ -17,13 +18,12 @@ public class EnemyRangedAI : RangedAI // Inherits Shooting & Soldier logic
         patrolWaitTime = 0.5f;
     }
 
-    // Override the instant snap with our slow tank treads!
     protected override void FaceTarget()
     {
         if (currentTarget == null) return;
 
         Vector3 dirToTarget = (currentTarget.position - transform.position).normalized;
-        dirToTarget.y = 0; // Keep it flat
+        dirToTarget.y = 0;
 
         if (dirToTarget != Vector3.zero)
         {
@@ -32,7 +32,6 @@ public class EnemyRangedAI : RangedAI // Inherits Shooting & Soldier logic
         }
     }
 
-    // Tell the State Machine we refuse to fire until the barrel is lined up
     protected override bool IsAimingAtTarget()
     {
         if (currentTarget == null) return false;
@@ -40,11 +39,18 @@ public class EnemyRangedAI : RangedAI // Inherits Shooting & Soldier logic
         Vector3 dirToTarget = (currentTarget.position - transform.position).normalized;
         dirToTarget.y = 0;
 
-        float angle = Vector3.Angle(transform.forward, dirToTarget);
-
-        return angle <= aimTolerance;
+        return Vector3.Angle(transform.forward, dirToTarget) <= aimTolerance;
     }
 
-    // Notice we DON'T override PerformAttack() here! 
-    // We let RangedAI handle spawning the cannonball!
+    protected override void PerformAttack()
+    {
+        attackCooldown = stats.attackSpeed;
+
+        // Aim directly at the target's position at fire time, ignoring body rotation drift
+        Vector3 dirToTarget = (currentTarget.position - firePoint.position).normalized;
+        Quaternion aimRotation = Quaternion.LookRotation(dirToTarget);
+
+        Projectile clone = Instantiate(projectilePrefab, firePoint.position, aimRotation);
+        clone.Setup(stats.damage, sensor.targetLayer, clone.speed);
+    }
 }

@@ -33,7 +33,6 @@ public class BuildButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
 
     // Tooltip panel logic
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         // Mouse hovered over the button!

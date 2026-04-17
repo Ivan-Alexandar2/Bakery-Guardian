@@ -1,16 +1,17 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MortarTowerAI : TowerAI
 {
     [Header("Mortar Mechanics")]
     public MortarShell mortarShellPrefab;
-    public Transform mortarBase;   // Assign the rotating base
-    public Transform mortarBarrel; // Assign the tilting barrel/arm
+    public Transform mortarBase;
+    public Transform mortarBarrel;
 
     [Header("Elevation Settings")]
-    public float minElevation = 30f; // Angle for targets at the very edge of your range
-    public float maxElevation = 75f; // Angle for targets standing right next to the tower
-    public float turnSpeed = 5f;     // How smoothly the mechanical parts move
+    public float minElevation = 30f;
+    public float maxElevation = 75f;
+    public float turnSpeed = 5f;
 
     protected override void Update()
     {
@@ -18,7 +19,6 @@ public class MortarTowerAI : TowerAI
         {
             currentTarget = sensor.GetTarget();
 
-            // Optional: Slowly return to a resting position when no enemies are around
             if (mortarBase != null && mortarBarrel != null)
             {
                 mortarBase.localRotation = Quaternion.Slerp(mortarBase.localRotation, Quaternion.identity, Time.deltaTime * turnSpeed);
@@ -34,20 +34,35 @@ public class MortarTowerAI : TowerAI
 
             if (attackCooldown <= 0)
             {
-                // Spawn and Launch!
+                Vector3 fireTarget = PredictTargetPosition();
+
                 MortarShell clone = Instantiate(mortarShellPrefab, firePoint.position, firePoint.rotation);
-                clone.Launch(firePoint.position, currentTarget.position, damage, sensor.targetLayer);
+                clone.Launch(firePoint.position, fireTarget, damage, sensor.targetLayer);
 
                 attackCooldown = fireRate;
             }
         }
     }
 
+    // Predicts where a moving target will be when the shell lands.
+    // Falls back to current position if the target is standing still.
+    Vector3 PredictTargetPosition()
+    {
+        NavMeshAgent targetAgent = currentTarget.GetComponentInParent<NavMeshAgent>();
+
+        if (targetAgent != null && targetAgent.velocity.magnitude > 0.5f)
+        {
+            return currentTarget.position + targetAgent.velocity * mortarShellPrefab.travelTime;
+        }
+
+        return currentTarget.position;
+    }
+
     void AimMortar()
     {
         // 1. SPIN THE BASE (Left / Right)
         Vector3 dirToBase = currentTarget.position - mortarBase.position;
-        dirToBase.y = 0; // Flatten it so the base doesn't tilt!
+        dirToBase.y = 0;
 
         if (dirToBase != Vector3.zero)
         {
@@ -56,19 +71,12 @@ public class MortarTowerAI : TowerAI
         }
 
         // 2. TILT THE BARREL (Up / Down)
-        // Check how far away the enemy is
         float distance = Vector3.Distance(mortarBase.position, currentTarget.position);
-
-        // Convert that distance to a percentage (0.0 to 1.0) based on your sensor's max range
         float distanceRatio = Mathf.Clamp01(distance / sensor.detectionRange);
-
-        // Calculate the perfect pitch. 
-        // If they are far (ratio = 1), pitch is minElevation. If they are close (ratio = 0), pitch is maxElevation.
         float targetPitch = Mathf.Lerp(maxElevation, minElevation, distanceRatio);
 
-        // Apply it as a Local Rotation. (In Unity, tilting UP is usually a negative X rotation)
         Quaternion targetBarrelRot = Quaternion.Euler(targetPitch, 0f, 0f);
-        if(mortarBarrel != null)
+        if (mortarBarrel != null)
             mortarBarrel.localRotation = Quaternion.Slerp(mortarBarrel.localRotation, targetBarrelRot, Time.deltaTime * turnSpeed);
     }
 }

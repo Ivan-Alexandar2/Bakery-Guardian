@@ -123,6 +123,7 @@ public class BuildingUIManager : MonoBehaviour
     public void CloseMenu()
     {
         menuPanel.SetActive(false);
+        upgradePanel.SetActive(false);
     }
 
     public void OnSpawnButtonClicked() // LINK THIS TO THE BUTTON

@@ -24,6 +24,7 @@ public class SoldierAI : Unit
     {
         base.Start();
         currentState = State.Patrol;
+        AIPathManager.Instance.Register(this);
 
         // Safety: If no guard point assigned, guard current location
         if (guardPoint == null)
@@ -48,6 +49,84 @@ public class SoldierAI : Unit
             if (currentTarget != null) currentState = State.Chase;
             else currentState = State.Patrol;
         }
+
+        // If we are falling from the sky or dead, don't do any NavMesh math!
+        //if (!agent.isOnNavMesh) return;
+
+        //switch (currentState)
+        //{
+        //    case State.Patrol:
+        //        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+        //        {
+        //            patrolTimer += Time.deltaTime;
+        //            if (patrolTimer >= patrolWaitTime)
+        //            {
+        //                SetRandomPatrolPoint();
+        //                patrolTimer = 0;
+        //            }
+        //        }
+        //        if (currentTarget != null) currentState = State.Chase;
+        //        break;
+
+        //    case State.Chase:
+        //        if (currentTarget == null) { currentState = State.Patrol; break; }
+
+        //        float distToTarget = Vector3.Distance(transform.position, currentTarget.position);
+
+        //        if (distToTarget > sensor.detectionRange * 1.5f)
+        //        {
+        //            currentTarget = null;
+        //            agent.ResetPath();
+        //            currentState = State.Patrol;
+        //            break;
+        //        }
+
+        //        pathUpdateTimer -= Time.deltaTime;
+        //        if (pathUpdateTimer <= 0f)
+        //        {
+        //            // Only ask for a path 5 times a second instead of 60!
+        //            agent.SetDestination(currentTarget.position);
+        //            pathUpdateTimer = 0.2f;
+        //        }
+
+        //        if (GetDistanceToTarget() <= stats.attackRange)
+        //        {
+        //            currentState = State.Attack;
+        //            agent.ResetPath();
+        //        }
+        //        break;
+
+        //    case State.Attack:
+        //        if (currentTarget == null)
+        //        {
+        //            currentState = State.Patrol;
+        //            break;
+        //        }
+
+        //        agent.ResetPath();
+        //        FaceTarget();
+
+        //        if (GetDistanceToTarget() > stats.attackRange + 0.5f)
+        //        {
+        //            currentState = State.Chase;
+        //        }
+
+        //        if (attackCooldown <= 0 && IsAimingAtTarget())
+        //        {
+        //            PerformAttack();
+        //        }
+        //        break;
+        //}
+    }
+
+    void OnDestroy()
+    {
+        AIPathManager.Instance.Unregister(this);
+    }
+
+    public virtual void ManagedTick()
+    {
+        // ...your existing Update() switch logic here
 
         // If we are falling from the sky or dead, don't do any NavMesh math!
         if (!agent.isOnNavMesh) return;
@@ -117,7 +196,6 @@ public class SoldierAI : Unit
                 break;
         }
     }
-
     protected void SetRandomPatrolPoint()
     {
         // Get a random point inside a sphere

@@ -25,6 +25,8 @@ public class Building : MonoBehaviour
     public float timeForNPCSpawn;
     public Sprite icon;
     public string jobType; // Type "Bakery", "Hospital"...
+
+    public Upgrade[] upgrades;
     void Start()
     {
         health = maxHealth;
@@ -42,7 +44,7 @@ public class Building : MonoBehaviour
 
     private void Die()
     {
-        // 1. Logic: If this is the main base, Game Over?
+        // 1. Logic: If this is the main base, Game Over
         if (gameObject.CompareTag("MainBase"))
         {
             Debug.Log("GAME OVER");
@@ -54,13 +56,12 @@ public class Building : MonoBehaviour
         {
             if (worker != null)
             {
-                // Call our new dedicated wake-up method!
+                // Call the dedicated wake-up method
                 worker.EvictFromBuilding();
             }
         }
 
         currentWorkers.Clear();
-        // 3. Destroy
         Destroy(gameObject);
     }
 
@@ -89,7 +90,7 @@ public class Building : MonoBehaviour
         UnitSpawner spawner = GetComponent<UnitSpawner>();
         if (spawner != null)
         {
-            return !spawner.IsFull; // Uses your existing limit!
+            return !spawner.IsFull; // Uses the existing limit!
         }
         return false;
     }
